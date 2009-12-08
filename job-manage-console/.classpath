@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="build_lib/servlet.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-betwixt-1.0-beta-1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/cos-multipart.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/displaytag-1.0-b3-SNAP.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jakarta-oro.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jta.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ognl-2.6.5.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/oscore-2.2.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/pell-multipart.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/quartz.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/securityfilter.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/sitemesh-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/velocity-dep-1.3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/webwork-2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/webwork-config-browser.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/xwork-1.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
