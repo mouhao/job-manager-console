@@ -1,12 +1,14 @@
 package org.quartz.standalone.server.startup;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -126,7 +128,8 @@ public class Bootstrap {
 	 * @param args
 	 */
 	public void start(String pid_file_path) throws Exception {
-		if (pidFileHelper.pidExists(pid_file_path)) {// 检查进程ID是否存在
+		File pidfile = new File(pid_file_path);
+		if (pidFileHelper.pidExists(pidfile)) {// 检查进程ID是否存在
 			log.info("QuartzServer already started.");
 		} else {
 
@@ -148,12 +151,13 @@ public class Bootstrap {
 	 * @throws Exception
 	 */
 	public void stop(String pidfile) throws Exception {
-
 		File pid = new File(pidfile);
-		if (!pidFileHelper.pidExists(pidfile)) {
+		if (!pidFileHelper.pidExists(pid)) {
 			log.info("no service started");
 		} else {
-			FileUtils.writeStringToFile(new File(pidfile), "stop");
+			FileOutputStream ops=new FileOutputStream(pid,true);
+			IOUtils.write("stop", ops);
+			IOUtils.closeQuietly(ops);
 		}
 	}
 

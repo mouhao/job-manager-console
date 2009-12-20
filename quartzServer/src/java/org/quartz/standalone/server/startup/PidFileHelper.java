@@ -34,13 +34,15 @@ public class PidFileHelper extends Thread {
 	 * 
 	 * @return
 	 */
-	public boolean pidExists(String pid_file_path) {
-		pidfile = new File(pid_file_path);
+	public boolean pidExists(File pidfile) {
 		if (!pidfile.exists()) {// 进程ID文件不存在，说明相应的进程也不存在
 			return false;
 		} else {
 			List<String> pids = this.getPids();// 用jps命令获得进程ID
-			String pid2 = this.getPidFromPidFile(pid_file_path);// 从PID文件里获取PID
+			String pid2 = this.getPidFromPidFile(pidfile);// 从PID文件里获取PID
+			if("".equals(pid2)){//PID文件存在，但是里面没有进程ID
+				pidfile.delete();
+			}
 			if (pids.contains(pid2)) {
 				return true;
 			} else {
@@ -95,7 +97,8 @@ public class PidFileHelper extends Thread {
 			}
 			fc.close();
 			in.close();
-			pidfile.delete();// 删除pid文件
+			FileUtils.forceDelete(pidfile);
+			pidfile.delete();
 			server.destroy();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -159,9 +162,8 @@ public class PidFileHelper extends Thread {
 	 * @param pid_file_path
 	 * @return
 	 */
-	public String getPidFromPidFile(String pid_file_path) {
+	public String getPidFromPidFile(File pidfile) {
 		String pid = "";
-		pidfile = new File(pid_file_path);
 		try {
 			String content = FileUtils.readFileToString(pidfile);
 			if (content.indexOf("PID[") != -1) {

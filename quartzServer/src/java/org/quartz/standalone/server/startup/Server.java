@@ -1,7 +1,6 @@
 package org.quartz.standalone.server.startup;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.daemon.Daemon;
 import org.apache.commons.daemon.DaemonContext;
@@ -9,7 +8,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
 import org.quartz.impl.StdSchedulerFactory;
 
 public class Server implements Daemon {
