@@ -1,0 +1,33 @@
+09-12-18 17:34:27 Job execution threads will use class loader of thread: main
+09-12-18 17:34:27 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-18 17:34:27 Quartz Scheduler v.1.6.6 created.
+09-12-18 17:34:27 RAMJobStore initialized.
+09-12-18 17:34:27 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-18 17:34:27 Quartz scheduler version: 1.6.6
+09-12-18 17:34:27 ------- Initialization Complete -----------
+09-12-18 17:34:27 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-18 17:34:56 Job execution threads will use class loader of thread: main
+09-12-18 17:34:56 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-18 17:34:56 Quartz Scheduler v.1.6.6 created.
+09-12-18 17:34:56 RAMJobStore initialized.
+09-12-18 17:34:56 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-18 17:34:56 Quartz scheduler version: 1.6.6
+09-12-18 17:34:56 ------- Initialization Complete -----------
+09-12-18 17:34:56 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-18 17:34:56 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-18 17:34:56 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-18 17:34:56 ------- Shutdown Complete -----------
+09-12-18 23:42:31 Job execution threads will use class loader of thread: main
+09-12-18 23:42:31 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-18 23:42:31 Quartz Scheduler v.1.6.6 created.
+09-12-18 23:42:31 RAMJobStore initialized.
+09-12-18 23:42:31 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-18 23:42:31 Quartz scheduler version: 1.6.6
+09-12-18 23:42:31 ------- Initialization Complete -----------
+09-12-18 23:48:46 Job execution threads will use class loader of thread: main
+09-12-18 23:48:46 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-18 23:48:46 Quartz Scheduler v.1.6.6 created.
+09-12-18 23:48:46 RAMJobStore initialized.
+09-12-18 23:48:46 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-18 23:48:46 Quartz scheduler version: 1.6.6
+09-12-18 23:48:46 ------- Initialization Complete -----------

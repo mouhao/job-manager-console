@@ -1,0 +1,7 @@
+[start/stop/restart/help/resume/pause]
+start      启动后台定时程序
+stop       停止后台定时程序
+restart    重启后台定时程序
+pause      挂起后台所有的定时程序
+resume     停止后台所有的定时程序
+help       打印帮助信息
