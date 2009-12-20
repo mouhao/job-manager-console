@@ -86,7 +86,7 @@ public class Server implements Daemon {
 	 */
 	public void restart() throws Exception {
 		sched.shutdown(true);//等待所有任务执行完后关闭
-		Thread.currentThread().sleep(1000l);//等待1s
+		Thread.sleep(1000l);//等待1s
 		init(null);//重新初始化
 		sched.start();
 	}
