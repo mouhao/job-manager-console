@@ -155,16 +155,30 @@ public class Bootstrap {
 		if (!pidFileHelper.pidExists(pid)) {
 			log.info("no service started");
 		} else {
-			FileOutputStream ops=new FileOutputStream(pid,true);
-			IOUtils.write("stop", ops);
-			IOUtils.closeQuietly(ops);
+			this.sendCommandToServer(pid, "stop");
 		}
 	}
+	
+	/**
+	 * 往PID文件里写命令，QuqrtzServer 有个线程监听PID文件的输入，如果有新的指令写入则执行相应的指令
+	 * @param pidfile
+	 * @param cmd
+	 * @throws Exception
+	 */
+	private void sendCommandToServer(File pidfile,String cmd) throws Exception{
+		FileOutputStream ops=new FileOutputStream(pidfile,true);
+		IOUtils.write(cmd, ops);
+		IOUtils.closeQuietly(ops);
+	}
 
-	public void restart(String args) throws Exception {
-		Method method = serverDaemon.getClass().getMethod("restart",
-				(Class[]) null);
-		method.invoke(serverDaemon, (Object[]) null);
+	/**
+	 * 重启QuartzServerDemo
+	 * @param args
+	 * @throws Exception
+	 */
+	public void restart(String pidfile) throws Exception {
+		File pid = new File(pidfile);
+		this.sendCommandToServer(pid, "restart");
 	}
 
 	/**
@@ -174,10 +188,9 @@ public class Bootstrap {
 	 * 
 	 * @throws Exception
 	 */
-	public void pause(String args) throws Exception {
-		Method method = serverDaemon.getClass().getMethod("pause",
-				(Class[]) null);
-		method.invoke(serverDaemon, (Object[]) null);
+	public void pause(String pidfile) throws Exception {
+		File pid = new File(pidfile);
+		this.sendCommandToServer(pid, "pause");
 	}
 
 	/**
@@ -187,9 +200,8 @@ public class Bootstrap {
 	 * 
 	 * @throws Exception
 	 */
-	public void resume(String args) throws Exception {
-		Method method = serverDaemon.getClass().getMethod("resume",
-				(Class[]) null);
-		method.invoke(serverDaemon, (Object[]) null);
+	public void resume(String pidfile) throws Exception {
+		File pid = new File(pidfile);
+		this.sendCommandToServer(pid, "resume");
 	}
 }

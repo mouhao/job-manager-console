@@ -25,7 +25,7 @@ public class Server implements Daemon {
 	public void destroy() {
 		if (sched != null) {
 			try {
-				sched.shutdown();
+				sched.shutdown(true);
 			} catch (SchedulerException e) {
 				e.printStackTrace();
 				log.error(e);
@@ -85,8 +85,10 @@ public class Server implements Daemon {
 	 * @throws Exception
 	 */
 	public void restart() throws Exception {
-		this.destroy();
-		this.start();
+		sched.shutdown(true);//等待所有任务执行完后关闭
+		Thread.currentThread().sleep(1000l);//等待1s
+		init(null);//重新初始化
+		sched.start();
 	}
 
 	/**
