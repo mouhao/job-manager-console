@@ -1,0 +1,418 @@
+09-12-19 01:19:27 Job execution threads will use class loader of thread: main
+09-12-19 01:19:27 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:19:27 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:19:27 RAMJobStore initialized.
+09-12-19 01:19:27 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:19:27 Quartz scheduler version: 1.6.6
+09-12-19 01:19:27 ------- Initialization Complete -----------
+09-12-19 01:19:27 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 01:19:35 Job execution threads will use class loader of thread: main
+09-12-19 01:19:35 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:19:35 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:19:35 RAMJobStore initialized.
+09-12-19 01:19:35 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:19:35 Quartz scheduler version: 1.6.6
+09-12-19 01:19:35 ------- Initialization Complete -----------
+09-12-19 01:19:35 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 01:19:55 Job execution threads will use class loader of thread: main
+09-12-19 01:19:55 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:19:55 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:19:55 RAMJobStore initialized.
+09-12-19 01:19:55 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:19:55 Quartz scheduler version: 1.6.6
+09-12-19 01:19:55 ------- Initialization Complete -----------
+09-12-19 01:19:55 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 01:19:55 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 01:19:55 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 01:19:55 ------- Shutdown Complete -----------
+09-12-19 01:20:30 Job execution threads will use class loader of thread: main
+09-12-19 01:20:30 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:20:30 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:20:30 RAMJobStore initialized.
+09-12-19 01:20:30 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:20:30 Quartz scheduler version: 1.6.6
+09-12-19 01:20:30 ------- Initialization Complete -----------
+09-12-19 01:20:30 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 01:21:16 Job execution threads will use class loader of thread: main
+09-12-19 01:21:16 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:21:16 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:21:16 RAMJobStore initialized.
+09-12-19 01:21:16 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:21:16 Quartz scheduler version: 1.6.6
+09-12-19 01:21:16 ------- Initialization Complete -----------
+09-12-19 01:21:54 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 01:21:54 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 01:21:54 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 01:21:54 ------- Shutdown Complete -----------
+09-12-19 01:26:23 Job execution threads will use class loader of thread: main
+09-12-19 01:26:23 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 01:26:23 Quartz Scheduler v.1.6.6 created.
+09-12-19 01:26:23 RAMJobStore initialized.
+09-12-19 01:26:23 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 01:26:23 Quartz scheduler version: 1.6.6
+09-12-19 01:26:23 ------- Initialization Complete -----------
+09-12-19 01:26:23 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 02:20:46 Job execution threads will use class loader of thread: main
+09-12-19 02:20:46 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 02:20:46 Quartz Scheduler v.1.6.6 created.
+09-12-19 02:20:46 RAMJobStore initialized.
+09-12-19 02:20:46 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 02:20:46 Quartz scheduler version: 1.6.6
+09-12-19 02:20:46 ------- Initialization Complete -----------
+09-12-19 02:20:46 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 02:21:01 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 02:21:01 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 02:21:01 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 02:21:01 ------- Shutdown Complete -----------
+09-12-19 02:25:06 no service started
+09-12-19 02:25:27 no service started
+09-12-19 02:25:45 Job execution threads will use class loader of thread: main
+09-12-19 02:25:45 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 02:25:45 Quartz Scheduler v.1.6.6 created.
+09-12-19 02:25:45 RAMJobStore initialized.
+09-12-19 02:25:45 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 02:25:45 Quartz scheduler version: 1.6.6
+09-12-19 02:25:45 ------- Initialization Complete -----------
+09-12-19 02:25:45 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 02:26:23 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 02:26:23 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 02:26:23 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 02:26:23 ------- Shutdown Complete -----------
+09-12-19 02:29:15 no service started
+09-12-19 03:24:54 Job execution threads will use class loader of thread: main
+09-12-19 03:24:54 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:24:54 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:24:54 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:24:54 Removed 0 Volatile Trigger(s).
+09-12-19 03:24:54 Removed 0 Volatile Job(s).
+09-12-19 03:24:54 JobStoreTX initialized.
+09-12-19 03:24:54 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:24:54 Quartz scheduler version: 1.6.6
+09-12-19 03:24:54 ------- Initialization Complete -----------
+09-12-19 03:24:54 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:24:54 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:24:54 Recovery complete.
+09-12-19 03:24:54 Removed 0 'complete' triggers.
+09-12-19 03:24:54 Removed 0 stale fired job entries.
+09-12-19 03:24:54 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 03:25:10 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 03:25:10 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 03:25:10 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:25:10 ------- Shutdown Complete -----------
+09-12-19 03:26:10 no service started
+09-12-19 03:26:47 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:26:47 Job execution threads will use class loader of thread: main
+09-12-19 03:26:47 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:26:47 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:26:47 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:26:47 Removed 0 Volatile Trigger(s).
+09-12-19 03:26:47 Removed 0 Volatile Job(s).
+09-12-19 03:26:47 JobStoreTX initialized.
+09-12-19 03:26:47 Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:26:47 Quartz scheduler version: 1.6.6
+09-12-19 03:26:47 ------- Initialization Complete -----------
+09-12-19 03:26:47 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:26:47 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:26:47 Recovery complete.
+09-12-19 03:26:47 Removed 0 'complete' triggers.
+09-12-19 03:26:47 Removed 0 stale fired job entries.
+09-12-19 03:26:47 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+09-12-19 03:27:22 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+09-12-19 03:27:22 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+09-12-19 03:27:22 Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:27:22 ------- Shutdown Complete -----------
+09-12-19 03:27:33 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:27:33 Job execution threads will use class loader of thread: main
+09-12-19 03:27:33 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:27:33 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:27:33 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:27:33 Removed 0 Volatile Trigger(s).
+09-12-19 03:27:33 Removed 0 Volatile Job(s).
+09-12-19 03:27:33 JobStoreTX initialized.
+09-12-19 03:27:33 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:27:33 Quartz scheduler version: 1.6.6
+09-12-19 03:27:33 ------- Initialization Complete -----------
+09-12-19 03:27:33 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:27:33 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:27:33 Recovery complete.
+09-12-19 03:27:33 Removed 0 'complete' triggers.
+09-12-19 03:27:33 Removed 0 stale fired job entries.
+09-12-19 03:27:33 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:31:22 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:31:22 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:31:22 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:31:22 ------- Shutdown Complete -----------
+09-12-19 03:31:35 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:31:35 Job execution threads will use class loader of thread: main
+09-12-19 03:31:35 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:31:35 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:31:35 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:31:35 Removed 0 Volatile Trigger(s).
+09-12-19 03:31:35 Removed 0 Volatile Job(s).
+09-12-19 03:31:35 JobStoreTX initialized.
+09-12-19 03:31:35 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:31:35 Quartz scheduler version: 1.6.6
+09-12-19 03:31:35 ------- Initialization Complete -----------
+09-12-19 03:31:35 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:31:35 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:31:35 Recovery complete.
+09-12-19 03:31:35 Removed 0 'complete' triggers.
+09-12-19 03:31:35 Removed 0 stale fired job entries.
+09-12-19 03:31:35 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:32:54 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:32:54 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:32:54 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:32:54 ------- Shutdown Complete -----------
+09-12-19 03:33:45 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:33:45 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:33:45 Job execution threads will use class loader of thread: main
+09-12-19 03:33:45 Job execution threads will use class loader of thread: main
+09-12-19 03:33:45 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:33:45 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:33:45 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:33:45 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:33:45 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:33:45 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:33:46 Removed 0 Volatile Trigger(s).
+09-12-19 03:33:46 Removed 0 Volatile Trigger(s).
+09-12-19 03:33:46 Removed 0 Volatile Job(s).
+09-12-19 03:33:46 Removed 0 Volatile Job(s).
+09-12-19 03:33:46 JobStoreTX initialized.
+09-12-19 03:33:46 JobStoreTX initialized.
+09-12-19 03:33:46 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:33:46 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:33:46 Quartz scheduler version: 1.6.6
+09-12-19 03:33:46 Quartz scheduler version: 1.6.6
+09-12-19 03:33:46 ------- Initialization Complete -----------
+09-12-19 03:33:46 ------- Initialization Complete -----------
+09-12-19 03:33:46 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:33:46 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:33:46 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:33:46 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:33:46 Recovery complete.
+09-12-19 03:33:46 Recovery complete.
+09-12-19 03:33:46 Removed 0 'complete' triggers.
+09-12-19 03:33:46 Removed 0 'complete' triggers.
+09-12-19 03:33:46 Removed 0 stale fired job entries.
+09-12-19 03:33:46 Removed 0 stale fired job entries.
+09-12-19 03:33:46 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:33:46 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:37:54 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:37:54 ------- Shutdown Complete -----------
+09-12-19 03:37:54 ------- Shutdown Complete -----------
+09-12-19 03:38:41 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:38:41 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:38:41 Job execution threads will use class loader of thread: main
+09-12-19 03:38:41 Job execution threads will use class loader of thread: main
+09-12-19 03:38:41 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:38:41 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:38:41 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:38:41 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:38:41 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:38:41 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:38:41 Removed 0 Volatile Trigger(s).
+09-12-19 03:38:41 Removed 0 Volatile Trigger(s).
+09-12-19 03:38:41 Removed 0 Volatile Job(s).
+09-12-19 03:38:41 Removed 0 Volatile Job(s).
+09-12-19 03:38:41 JobStoreTX initialized.
+09-12-19 03:38:41 JobStoreTX initialized.
+09-12-19 03:38:41 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:38:41 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:38:41 Quartz scheduler version: 1.6.6
+09-12-19 03:38:41 Quartz scheduler version: 1.6.6
+09-12-19 03:38:41 ------- Initialization Complete -----------
+09-12-19 03:38:41 ------- Initialization Complete -----------
+09-12-19 03:38:41 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:38:41 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:38:41 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:38:41 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:38:41 Recovery complete.
+09-12-19 03:38:41 Recovery complete.
+09-12-19 03:38:41 Removed 0 'complete' triggers.
+09-12-19 03:38:41 Removed 0 'complete' triggers.
+09-12-19 03:38:41 Removed 0 stale fired job entries.
+09-12-19 03:38:41 Removed 0 stale fired job entries.
+09-12-19 03:38:41 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:38:41 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:39:32 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:39:32 ------- Shutdown Complete -----------
+09-12-19 03:39:32 ------- Shutdown Complete -----------
+09-12-19 03:39:42 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:39:42 Job execution threads will use class loader of thread: main
+09-12-19 03:39:42 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:39:42 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:39:42 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:39:42 Removed 0 Volatile Trigger(s).
+09-12-19 03:39:42 Removed 0 Volatile Job(s).
+09-12-19 03:39:42 JobStoreTX initialized.
+09-12-19 03:39:42 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:39:42 Quartz scheduler version: 1.6.6
+09-12-19 03:39:42 ------- Initialization Complete -----------
+09-12-19 03:39:42 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:39:42 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:39:42 Recovery complete.
+09-12-19 03:39:42 Removed 0 'complete' triggers.
+09-12-19 03:39:42 Removed 0 stale fired job entries.
+09-12-19 03:39:42 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 03:41:05 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 03:41:05 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 03:41:05 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 03:41:05 ------- Shutdown Complete -----------
+09-12-19 03:41:15 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 03:41:15 Job execution threads will use class loader of thread: main
+09-12-19 03:41:15 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 03:41:15 Quartz Scheduler v.1.6.6 created.
+09-12-19 03:41:15 Using thread monitor-based data access locking (synchronization).
+09-12-19 03:41:15 Removed 0 Volatile Trigger(s).
+09-12-19 03:41:15 Removed 0 Volatile Job(s).
+09-12-19 03:41:15 JobStoreTX initialized.
+09-12-19 03:41:15 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 03:41:15 Quartz scheduler version: 1.6.6
+09-12-19 03:41:15 ------- Initialization Complete -----------
+09-12-19 03:41:15 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 03:41:15 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 03:41:15 Recovery complete.
+09-12-19 03:41:15 Removed 0 'complete' triggers.
+09-12-19 03:41:15 Removed 0 stale fired job entries.
+09-12-19 03:41:15 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 04:02:54 QuartzServer already started.
+09-12-19 04:03:38 QuartzServer already started.
+09-12-19 04:06:48 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 04:06:48 Job execution threads will use class loader of thread: main
+09-12-19 04:06:48 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 04:06:48 Quartz Scheduler v.1.6.6 created.
+09-12-19 04:06:48 Using thread monitor-based data access locking (synchronization).
+09-12-19 04:06:49 Removed 0 Volatile Trigger(s).
+09-12-19 04:06:49 Removed 0 Volatile Job(s).
+09-12-19 04:06:49 JobStoreTX initialized.
+09-12-19 04:06:49 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 04:06:49 Quartz scheduler version: 1.6.6
+09-12-19 04:06:49 ------- Initialization Complete -----------
+09-12-19 04:06:49 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 04:06:49 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 04:06:49 Recovery complete.
+09-12-19 04:06:49 Removed 0 'complete' triggers.
+09-12-19 04:06:49 Removed 0 stale fired job entries.
+09-12-19 04:06:49 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 04:06:59 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 04:06:59 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 04:06:59 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 04:06:59 ------- Shutdown Complete -----------
+09-12-19 04:18:16 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/.QuartzServer.pid
+09-12-19 04:18:16 Job execution threads will use class loader of thread: main
+09-12-19 04:18:16 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 04:18:16 Quartz Scheduler v.1.6.6 created.
+09-12-19 04:18:16 Using thread monitor-based data access locking (synchronization).
+09-12-19 04:18:16 Removed 0 Volatile Trigger(s).
+09-12-19 04:18:16 Removed 0 Volatile Job(s).
+09-12-19 04:18:16 JobStoreTX initialized.
+09-12-19 04:18:16 Quartz scheduler 'QuartzServer' initialized from default resource file in Quartz package: 'quartz.properties'
+09-12-19 04:18:16 Quartz scheduler version: 1.6.6
+09-12-19 04:18:16 ------- Initialization Complete -----------
+09-12-19 04:18:16 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 04:18:16 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 04:18:16 Recovery complete.
+09-12-19 04:18:16 Removed 0 'complete' triggers.
+09-12-19 04:18:16 Removed 0 stale fired job entries.
+09-12-19 04:18:16 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 04:28:24 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 04:28:24 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 04:28:24 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 04:28:24 ------- Shutdown Complete -----------
+09-12-19 05:51:01 QuartzServer already started.
+09-12-19 05:52:59 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 05:52:59 ------- Initialization Complete -----------
+09-12-19 05:55:31 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 05:56:11 ------- Initialization Complete -----------
+09-12-19 05:57:48 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 05:57:48 ------- Initialization Complete -----------
+09-12-19 06:01:02 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:01:02 ------- Initialization Complete -----------
+09-12-19 06:08:21 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:08:37 ------- Initialization Complete -----------
+09-12-19 06:11:20 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:18:44 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:18:44 Job execution threads will use class loader of thread: main
+09-12-19 06:18:44 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 06:18:44 Quartz Scheduler v.1.6.6 created.
+09-12-19 06:18:44 Using thread monitor-based data access locking (synchronization).
+09-12-19 06:18:44 Removed 0 Volatile Trigger(s).
+09-12-19 06:18:44 Removed 0 Volatile Job(s).
+09-12-19 06:18:44 JobStoreTX initialized.
+09-12-19 06:18:44 Quartz scheduler 'QuartzServer' initialized from the specified file : '/Volumes/Resource/eclipse_workspace/quartzServer/conf/quartz.properties'
+09-12-19 06:18:44 Quartz scheduler version: 1.6.6
+09-12-19 06:18:44 ------- Initialization Complete -----------
+09-12-19 06:18:44 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 06:18:44 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 06:18:44 Recovery complete.
+09-12-19 06:18:44 Removed 0 'complete' triggers.
+09-12-19 06:18:44 Removed 0 stale fired job entries.
+09-12-19 06:18:44 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 06:19:11 Scheduler QuartzServer_$_NON_CLUSTERED shutting down.
+09-12-19 06:19:11 Scheduler QuartzServer_$_NON_CLUSTERED paused.
+09-12-19 06:19:11 Scheduler QuartzServer_$_NON_CLUSTERED shutdown complete.
+09-12-19 06:19:11 ------- Shutdown Complete -----------
+09-12-19 06:22:42 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:22:42 Job execution threads will use class loader of thread: main
+09-12-19 06:22:42 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 06:22:42 Quartz Scheduler v.1.6.6 created.
+09-12-19 06:22:42 Using thread monitor-based data access locking (synchronization).
+09-12-19 06:22:42 Removed 0 Volatile Trigger(s).
+09-12-19 06:22:42 Removed 0 Volatile Job(s).
+09-12-19 06:22:42 JobStoreTX initialized.
+09-12-19 06:22:42 Quartz scheduler 'QuartzServer' initialized from the specified file : '/Volumes/Resource/eclipse_workspace/quartzServer/conf/quartz.properties'
+09-12-19 06:22:42 Quartz scheduler version: 1.6.6
+09-12-19 06:22:42 ------- Initialization Complete -----------
+09-12-19 06:22:42 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 06:22:42 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 06:22:42 Recovery complete.
+09-12-19 06:22:42 Removed 0 'complete' triggers.
+09-12-19 06:22:42 Removed 0 stale fired job entries.
+09-12-19 06:22:42 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 06:30:42 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:30:42 Job execution threads will use class loader of thread: main
+09-12-19 06:30:42 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 06:30:42 Quartz Scheduler v.1.6.6 created.
+09-12-19 06:30:42 Using thread monitor-based data access locking (synchronization).
+09-12-19 06:30:42 Removed 0 Volatile Trigger(s).
+09-12-19 06:30:42 Removed 0 Volatile Job(s).
+09-12-19 06:30:42 JobStoreTX initialized.
+09-12-19 06:30:42 Quartz scheduler 'QuartzServer' initialized from the specified file : '/Volumes/Resource/eclipse_workspace/quartzServer/conf/quartz.properties'
+09-12-19 06:30:42 Quartz scheduler version: 1.6.6
+09-12-19 06:30:42 ------- Initialization Complete -----------
+09-12-19 06:30:42 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 06:30:42 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 06:30:42 Recovery complete.
+09-12-19 06:30:42 Removed 0 'complete' triggers.
+09-12-19 06:30:42 Removed 0 stale fired job entries.
+09-12-19 06:30:42 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 06:33:49 QuartzServer already started.
+09-12-19 06:34:53 no service started
+09-12-19 06:37:43 pidfile:/Volumes/Resource/eclipse_workspace/quartzServer/dist/.QuartzServer.pid
+09-12-19 06:37:43 Job execution threads will use class loader of thread: main
+09-12-19 06:37:43 Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09-12-19 06:37:43 Quartz Scheduler v.1.6.6 created.
+09-12-19 06:37:43 Using thread monitor-based data access locking (synchronization).
+09-12-19 06:37:43 Removed 0 Volatile Trigger(s).
+09-12-19 06:37:43 Removed 0 Volatile Job(s).
+09-12-19 06:37:43 JobStoreTX initialized.
+09-12-19 06:37:43 Quartz scheduler 'QuartzServer' initialized from the specified file : '/Volumes/Resource/eclipse_workspace/quartzServer/conf/quartz.properties'
+09-12-19 06:37:43 Quartz scheduler version: 1.6.6
+09-12-19 06:37:43 ------- Initialization Complete -----------
+09-12-19 06:37:43 Freed 0 triggers from 'acquired' / 'blocked' state.
+09-12-19 06:37:43 Recovering 0 jobs that were in-progress at the time of the last shut-down.
+09-12-19 06:37:43 Recovery complete.
+09-12-19 06:37:43 Removed 0 'complete' triggers.
+09-12-19 06:37:43 Removed 0 stale fired job entries.
+09-12-19 06:37:43 Scheduler QuartzServer_$_NON_CLUSTERED started.
+09-12-19 06:37:49 QuartzServer already started.

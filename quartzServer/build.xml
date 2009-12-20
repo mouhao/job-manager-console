@@ -1,0 +1,70 @@
+<project name="quartzServer" default="jar" basedir=".">
+	<description>
+    	---------------------------------
+		=								=
+    	=	Quartz 后台定时服务程序	    =
+    	=								=
+    	---------------------------------
+    </description>
+
+	<path id="project.class.path" description="Configure java.class.path">
+
+		<pathelement path="${basedir}" />
+		<fileset dir="${basedir}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement path="${java.class.path}" />
+	</path>
+	<property name="version" value="1.0" />
+	<property name="name" value="quartzServer" />
+	
+	<property name="build.path" value="${basedir}/build" />
+	<property name="dist.path" value="${basedir}/dist" />
+	<property name="src.java" location="${basedir}/src/java" />
+	<property name="compile.version" value="1.5" />
+
+
+
+	<target name="compile.java" depends="clean,init">
+		<javac srcdir="${src.java}" destdir="${build.path}" classpathref="project.class.path" debug="on" source="${compile.version}" target="${compile.version}" />
+		<copy filtering="no" todir="${build.path}">
+			<fileset dir="${src.java}">
+				<exclude name="**/*.java" />
+				<exclude name="**/package.html" />
+				<exclude name="**/doc-files/**" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<target name="build" depends="jar" description="runs the jar target" />
+
+	<target name="jar" description="package main project and plugin jars">
+		<!-- Build one jar to rule them all. -->
+		<jar basedir="${build.path}" jarfile="${dist.path}/${name}-${version}.jar" >
+			<manifest>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="clean" description="clean the dist">
+		<delete dir="${dist.path}" />
+		<delete dir="${build.path}"/>
+	</target>
+	
+	<target name="init" description="create dirs">
+		<mkdir dir="${dist.path}"/>
+		<mkdir dir="${build.path}"/>
+		<mkdir dir="${dist.path}/lib"/>
+		<mkdir dir="${dist.path}/log"/>
+		<mkdir dir="${dist.path}/conf"/>
+	</target>
+	
+	<target name="dist" depends="compile.java,jar">
+		<copydir dest="${dist.path}/lib" src="${basedir}/lib"></copydir>
+		<copydir dest="${dist.path}" src="${basedir}/script"></copydir>
+		<copydir dest="${dist.path}/conf" src="${basedir}/conf"></copydir>
+	</target>
+
+
+</project>
