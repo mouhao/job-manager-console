@@ -86,7 +86,18 @@ public class PidFileHelper extends Thread {
 					in.read(chs);
 					String line = new String(chs);
 					if (line.indexOf("stop") != -1) {
+						server.destroy();
 						break;// 停止服务
+					}else if(line.indexOf("pause")!=-1){
+						server.pause();
+						//暂停服务
+						
+					}else if(line.indexOf("resume")!=-1){
+						server.resume();
+						//恢复服务
+					}else if(line.indexOf("restart")!=-1){
+						server.restart();
+						//重启服务
 					}
 					chs = null;
 					position = size;
@@ -99,7 +110,6 @@ public class PidFileHelper extends Thread {
 			in.close();
 			FileUtils.forceDelete(pidfile);
 			pidfile.delete();
-			server.destroy();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
