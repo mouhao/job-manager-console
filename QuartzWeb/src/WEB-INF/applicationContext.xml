@@ -31,6 +31,7 @@
         <property name="maxIdleTime" value="${cpool.maxIdleTime}"/>
     </bean>
 
+    <!-- 在这个配置文件上传的路径-->
     <bean id="fileUploadHelper" class="com.sohu.quartz.utils.FileUploadHelper" scope="singleton">
         <property name="uploadDir" value="/Users/SongJiao/test"/>
     </bean>
