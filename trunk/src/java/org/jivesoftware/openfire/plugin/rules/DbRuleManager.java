@@ -50,10 +50,86 @@ public class DbRuleManager {
     private static final String INSERT_MSN = "insert into ofMsn(jid,msn,enable) values(?,?,?)";
     private static final String UPDATE_MSN_ENABLE = "update ofMsn set enable=? where jid=?";
     private static final String UPDATE_MSN = "update ofMsn set msn=? where jid=?";
+    private static final String GET_MSN_BY_JID = "select id,jid,msn,enable from ofMsn where jid=?";
+
 
     private static final String INSERT_SMS = "insert into ofSms(jid,cellphone,enable) values(?,?,?)";
     private static final String UPDATE_SMS_ENABLE = "update ofSms set enable=? where jid=?";
     private static final String UPDATE_SMS_PHONE = "update ofSms set cellphone=? where jid=?";
+    private static final String GET_SMS_BY_JID = "select id,jid,cellphone,enable from ofSMS where jid=?";
+
+
+    public Sms getSms(String jid) {
+        Sms sms = null;
+
+        synchronized (sms) {
+            if (rules.isEmpty()) {
+                Connection con = null;
+                PreparedStatement pstmt = null;
+                ResultSet rs = null;
+                try {
+                    con = DbConnectionManager.getConnection();
+                    pstmt = con.prepareStatement(GET_SMS_BY_JID);
+                    rs = pstmt.executeQuery();
+
+                    while (rs.next()) {
+                        sms = new Sms();
+                        sms.setId(rs.getLong(1));
+                        sms.setJid(rs.getString(2));
+                        sms.setCellphone(rs.getString(3));
+                        sms.setEnable(rs.getBoolean(4));
+
+                    }
+
+
+                } catch (SQLException sqle) {
+                    Log.error(sqle);
+                }
+                finally {
+                    DbConnectionManager.closeConnection(pstmt, con);
+                }
+            }
+        }
+
+
+        return sms;
+    }
+
+    public Msn getMsn(String jid) {
+        Msn msn = null;
+
+        synchronized (msn) {
+            if (rules.isEmpty()) {
+                Connection con = null;
+                PreparedStatement pstmt = null;
+                ResultSet rs = null;
+                try {
+                    con = DbConnectionManager.getConnection();
+                    pstmt = con.prepareStatement(GET_MSN_BY_JID);
+                    pstmt.setString(1, jid);
+                    rs = pstmt.executeQuery();
+
+                    while (rs.next()) {
+                        msn = new Msn();
+                        msn.setId(rs.getLong(1));
+                        msn.setJid(rs.getString(2));
+                        msn.setMsn(rs.getString(3));
+                        msn.setEnable(rs.getBoolean(4));
+                    }
+
+
+                } catch (SQLException sqle) {
+                    Log.error(sqle);
+                }
+                finally {
+                    DbConnectionManager.closeConnection(pstmt, con);
+                }
+            }
+        }
+
+
+        return msn;
+    }
 
     public boolean addSMS(String jid, String cellphone, int enable) {
         Connection con = null;
