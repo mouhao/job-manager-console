@@ -48,6 +48,7 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
     public void destroyPlugin() {
         // unregister with interceptor manager
         interceptorManager.removeInterceptor(this);
+        
     }
 
 
