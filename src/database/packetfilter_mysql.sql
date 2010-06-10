@@ -1,4 +1,4 @@
-CREATE TABLE ofPfRules (
+CREATE TABLE IF NOT EXISTS ofPfRules (
    id           BIGINT          NOT NULL AUTO_INCREMENT,
    ruleorder    BIGINT      ,
    type         varchar(255)     ,
@@ -13,7 +13,7 @@ CREATE TABLE ofPfRules (
    PRIMARY KEY (id)
 );
 
-CREATE TABLE ofMsn(
+CREATE TABLE IF NOT EXISTS ofMsn(
    id           BIGINT          NOT NULL AUTO_INCREMENT,
    jid          varchar(255)  ,
    msn          varchar(255)  ,
@@ -21,7 +21,7 @@ CREATE TABLE ofMsn(
    PRIMARY KEY(id)
 );
 
-CREATE TABLE ofSms(
+CREATE TABLE IF NOT EXISTS ofSms(
    id           BIGINT          NOT NULL AUTO_INCREMENT,
    jid          varchar(255)  ,
    cellphone    varchar(20)  ,

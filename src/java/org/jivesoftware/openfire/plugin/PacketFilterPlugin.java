@@ -6,9 +6,11 @@ import org.jivesoftware.openfire.container.PluginManager;
 import org.jivesoftware.openfire.interceptor.InterceptorManager;
 import org.jivesoftware.openfire.interceptor.PacketInterceptor;
 import org.jivesoftware.openfire.interceptor.PacketRejectedException;
+import org.jivesoftware.openfire.plugin.msn.MsnRobot;
 import org.jivesoftware.openfire.plugin.rules.Rule;
 import org.jivesoftware.openfire.plugin.rules.RuleManager;
 import org.jivesoftware.openfire.plugin.rules.RuleManagerProxy;
+import org.jivesoftware.openfire.plugin.sms.SmsRobot;
 import org.jivesoftware.openfire.session.Session;
 import org.jivesoftware.util.Log;
 import org.xmpp.packet.Packet;
@@ -38,6 +40,8 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
         pf = PacketFilter.getInstance();
         RuleManager ruleManager = new RuleManagerProxy();
         pf.setRuleManager(ruleManager);
+        MsnRobot.getInstance();
+        SmsRobot.getInstance();
         
     }
 
@@ -63,6 +67,7 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
         Rule rule = pf.findMatch(packet);
 
         if (rule != null) {
+            Log.info("Matched rule:"+rule.getDisplayName()+"===================");
             rule.doAction(packet);
         }
     }

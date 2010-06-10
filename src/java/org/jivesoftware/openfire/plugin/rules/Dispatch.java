@@ -10,9 +10,7 @@ import org.jivesoftware.openfire.plugin.sms.SmsRobot;
 import org.jivesoftware.openfire.session.ClientSession;
 import org.jivesoftware.util.JiveGlobals;
 import org.jivesoftware.util.Log;
-import org.xmpp.packet.JID;
-import org.xmpp.packet.Message;
-import org.xmpp.packet.Packet;
+import org.xmpp.packet.*;
 
 import java.util.Iterator;
 
@@ -29,29 +27,41 @@ public class Dispatch extends AbstractRule implements Rule {
     }
 
     public Packet doAction(Packet packet) throws PacketRejectedException {
+        Log.info("===========================Dispatch packet================================");
         SessionManager sessionManager = SessionManager.getInstance();
         ClientSession clientSession = sessionManager.getSession(packet.getFrom());
+        Log.info("Message?:" + (packet instanceof Message));
+        Log.info("Presence?:" + (packet instanceof Presence));
+        Log.info("IQ?:" + (packet instanceof IQ));
         if (packet instanceof Message) {
-            clientSession.process(packet); //���ȷ���openfire���û�
-            //����MSN
             try {
-                Group group = GroupManager.getInstance().getProvider().getGroup(packet.getTo().toBareJID());
+                Group group = GroupManager.getInstance().getProvider().getGroup(this.getDestination());
+                Log.info("Group:" + group.getName());
                 Iterator<JID> members = group.getMembers().iterator();
+
                 DbRuleManager drm = DbRuleManager.getInstance();
                 MsnRobot msnRobot = MsnRobot.getInstance();
-                SmsRobot smsRobot=SmsRobot.getInstance();
+                SmsRobot smsRobot = SmsRobot.getInstance();
                 while (members.hasNext()) {
                     JID member = members.next();
-                    Msn msn = drm.getMsn(member.toBareJID());//����msn
-                    String msg = "[" + ((Message) packet).getSubject() + "]:" + ((Message) packet).getBody();
-                    if (msnRobot.isOnlie(msn.getMsn())) {
-                        msnRobot.sendMessage(msn.getMsn(), msg);
-                    } else {
-                        Sms sms = drm.getSms(member.toBareJID());//
-                        smsRobot.sendSmsMsg(sms.getCellphone(),msg);
+                    Log.info("member:" + member.toBareJID());
+                    Msn msn = drm.getMsn(member.toBareJID());
+                    if (msn != null) {
+                        String msg = "[" + ((Message) packet).getSubject() + "]:" + ((Message) packet).getBody();
+                        if (msnRobot.isOnlie(msn.getMsn())) {
+                            msnRobot.sendMessage(msn.getMsn(), msg);
+                        } else {
+                            Sms sms = drm.getSms(member.toBareJID());
+                            if (sms != null) {
+                                smsRobot.sendSmsMsg(sms.getCellphone(), msg);
+                            }
+                        }
+                    } else{
+                        Log.error("user:"+member+" has no MSN");
                     }
                 }
             } catch (GroupNotFoundException e) {
+                Log.error(e);
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
         }

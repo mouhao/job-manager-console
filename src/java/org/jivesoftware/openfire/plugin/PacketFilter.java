@@ -8,6 +8,9 @@ import org.jivesoftware.openfire.plugin.rules.RuleManager;
 import org.jivesoftware.util.Log;
 import org.xmpp.packet.*;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class PacketFilter {
 
     private static PacketFilter packetFilter = new PacketFilter();
@@ -27,8 +30,12 @@ public class PacketFilter {
 
     public Rule findMatch(Packet packet) {
         if (packet.getTo() == null || packet.getFrom() == null) return null;
-        //TODO Would it be better to keep a local copy of the rules?
-        for (Rule rule : ruleManager.getRules()) {
+        List<Rule> rules=ruleManager.getRules();
+        for (Rule rule : rules) {
+            Log.info("RULE:"+rule.getRuleType());
+            Log.info("typeMatch:"+typeMatch(rule.getPackeType(), packet));
+            Log.info("sourceDestMatch:("+rule.getDestType()+","+rule.getDestination()+","+packet.getTo()+")"+sourceDestMatch(rule.getDestType(), rule.getDestination(), packet.getTo()));
+            Log.info("sourceDestMatch:("+rule.getSourceType()+","+rule.getSource()+","+packet.getFrom()+")"+sourceDestMatch(rule.getSourceType(), rule.getSource(), packet.getFrom()));
             if (!rule.isDisabled() &&
                     typeMatch(rule.getPackeType(), packet) &&
                     sourceDestMatch(rule.getDestType(), rule.getDestination(), packet.getTo()) &&
@@ -71,7 +78,10 @@ public class PacketFilter {
         return false;
     }
 
-
+    /**
+     * 2010.06.10 15:49:28 sourceDestMatch:(Group,test,test001@127.0.0.1/spark)false
+     * 2010.06.10 15:49:28 sourceDestMatch:(User,test001@127.0.0.1,test001@127.0.0.1/spark)true
+     */
     private boolean sourceDestMatch(Rule.SourceDestType type, String ruleToFrom, JID packetToFrom) {
         if (type == Rule.SourceDestType.Any) return true;
         if (type == Rule.SourceDestType.User) {
@@ -108,11 +118,21 @@ public class PacketFilter {
         return match;
     }
 
-
+    //sourceDestMatch:(Group,test,test001@127.0.0.1/spark)false
     private boolean packetToFromGroup(String rulegroup, JID packetToFrom) {
         Group group = null;
         try {
             group = GroupManager.getInstance().getProvider().getGroup(rulegroup);
+            Log.info("GROUP:"+group.getName());
+            Iterator<JID> itr=group.getMembers().iterator();
+            Log.info("=================members=========================");
+            while(itr.hasNext()){
+                JID jid=itr.next();
+                Log.info("JID:"+jid.toBareJID());
+
+            }
+            Log.info("=================end=========================");
+            Log.info("User:"+packetToFrom+" is in Group:"+group.getName()+"?:"+group.isUser(packetToFrom));
         } catch (GroupNotFoundException e) {
             e.printStackTrace();
         }
@@ -120,8 +140,6 @@ public class PacketFilter {
             return false;
         } else {
             if (group.isUser(packetToFrom)) {
-                return true;
-            }else if(group.getName().startsWith("monitor_")){
                 return true;
             }
         }
