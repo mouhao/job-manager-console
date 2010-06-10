@@ -132,7 +132,9 @@
             rule = new Reject();
         } else if (packetAction.equals("Drop")) {
             rule = new Drop();
-        } 
+        } else if(packetAction.equals("Dispatch")){
+            rule =new Dispatch();
+        }
 
         if (rule != null) {
             rule.setDescription(description);

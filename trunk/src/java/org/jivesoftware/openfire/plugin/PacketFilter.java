@@ -121,7 +121,7 @@ public class PacketFilter {
         } else {
             if (group.isUser(packetToFrom)) {
                 return true;
-            }else if(group.getName().startsWith("monitor_")){//以monitor开头的组
+            }else if(group.getName().startsWith("monitor_")){
                 return true;
             }
         }
