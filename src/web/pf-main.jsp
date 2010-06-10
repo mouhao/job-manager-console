@@ -1,9 +1,12 @@
 <%@ page import="org.jivesoftware.openfire.component.InternalComponentManager,
                  org.jivesoftware.openfire.plugin.component.ComponentList,
                  org.jivesoftware.openfire.plugin.rules.Rule,
+                 org.jivesoftware.openfire.plugin.rules.Msn,
+                 org.jivesoftware.openfire.plugin.rules.Sms,
                  org.jivesoftware.openfire.plugin.rules.RuleManager"
         %>
 <%@ page import="org.jivesoftware.openfire.plugin.rules.RuleManagerProxy" %>
+<%@ page import="org.jivesoftware.openfire.plugin.rules.DbRuleManager" %>
 <%@ page import="org.xmpp.packet.JID" %>
 <%@ page import="java.util.List" %>
 
@@ -49,6 +52,94 @@
 <body>
 
 
+<div class="jive-table">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <thead>
+            <tr>
+                <th nowrap>JID</th>
+                <th nowrap>MSN</th>
+                <th nowrap>Enable</th>
+                <th nowrap>&nbsp</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%
+                DbRuleManager dbRuleManager=DbRuleManager.getInstance();
+                List<Msn> msns=dbRuleManager.getAllMsn();
+                for (Msn msn : msns) {
+
+
+            %>
+
+            <tr class="jive-<%= (msn.isEnable() ? "even" : "odd") %>">
+                       <%if(msn.isEnable()){%>
+                       <td><%=msn.getJid()%></td>
+                        <td><%=msn.getMsn()%></td>
+                        <td><%=msn.isEnable()%></td>
+                       <%}else{%>
+                       <td><strike><%=msn.getJid()%></strike></td>
+                        <td><strike><%=msn.getMsn()%></strike></td>
+                        <td><strike><%=msn.isEnable()%></strike></td>
+                        <%}%>
+                <td><a href="delete-msn.jsp?id=<%=msn.getId()%>"><img src="/images/delete-16x16.gif"
+                                                                                width="16" height="16"
+                                                                                border="0"
+                                                                                alt="<fmt:message key="global.click_delete" />"></a>
+                    <a href="msn-edit-form.jsp?edit=<%=msn.getId()%>"><img src="/images/edit-16x16.gif" width="16" height="16" border="0" alt="<fmt:message key="pf.click.edit"/>"></a>
+                </td>
+            </tr>
+            <%} %>
+        </tbody>
+    </table>
+    </div>
+<input type="button" ONCLICK="window.location.href='msn-form.jsp'" name="create" value="<fmt:message key="pf.create.new.msn"/>">
+<hr>
+
+
+<div class="jive-table">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <thead>
+            <tr>
+                <th nowrap>JID</th>
+                <th nowrap>CellPhone</th>
+                <th nowrap>Enable</th>
+                <th nowrap>&nbsp</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%
+                List<Sms> smss=dbRuleManager.getAllSms();
+                for (Sms sms : smss) {
+
+
+            %>
+
+            <tr class="jive-<%= (sms.isEnable() ? "even" : "odd") %>">
+
+                        <% if(sms.isEnable()){%>
+                        <td><%=sms.getJid()%></td>
+                        <td><%=sms.getCellphone()%></td>
+                        <td><%=sms.isEnable()%></td>
+                            <%}else{%>
+                         <td><strike><%=sms.getJid()%></strike></td>
+                        <td><strike><%=sms.getCellphone()%></strike></td>
+                        <td><strike><%=sms.isEnable()%></strike></td>
+                        <%}%>
+                <td><a href="delete-sms.jsp?id=<%=sms.getId()%>"><img src="/images/delete-16x16.gif"
+                                                                                width="16" height="16"
+                                                                                border="0"
+                                                                                alt="<fmt:message key="global.click_delete" />"></a>
+                    <a href="sms-edit-form.jsp?edit=<%=sms.getId()%>"><img src="/images/edit-16x16.gif" width="16" height="16" border="0" alt="<fmt:message key="pf.click.edit"/>"></a>
+                </td>
+            </tr>
+            <%} %>
+        </tbody>
+    </table>
+    </div>
+<input type="button" ONCLICK="window.location.href='msn-form.jsp'" name="create" value="<fmt:message key="pf.create.new.sms"/>">
+<hr>
 <div class="jive-table">
     <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <thead>
@@ -125,7 +216,7 @@
         </tbody>
     </table>
     </div>
-    <input type="button" ONCLICK="window.location.href='rule-form.jsp'" name="create" value="<fmt:message key="pf.create.new.rule"/>">
+<input type="button" ONCLICK="window.location.href='rule-form.jsp'" name="create" value="<fmt:message key="pf.create.new.rule"/>">
 
 </body>
 </html>
