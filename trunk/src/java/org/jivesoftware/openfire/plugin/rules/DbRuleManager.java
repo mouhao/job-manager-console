@@ -56,20 +56,21 @@ public class DbRuleManager {
     private static final String INSERT_SMS = "insert into ofSms(jid,cellphone,enable) values(?,?,?)";
     private static final String UPDATE_SMS_ENABLE = "update ofSms set enable=? where jid=?";
     private static final String UPDATE_SMS_PHONE = "update ofSms set cellphone=? where jid=?";
-    private static final String GET_SMS_BY_JID = "select id,jid,cellphone,enable from ofSMS where jid=?";
+    private static final String GET_SMS_BY_JID = "select id,jid,cellphone,enable from ofSms where jid=?";
 
 
     public Sms getSms(String jid) {
         Sms sms = null;
 
-        synchronized (sms) {
-            if (rules.isEmpty()) {
+        synchronized (GET_SMS_BY_JID) {
+
                 Connection con = null;
                 PreparedStatement pstmt = null;
                 ResultSet rs = null;
                 try {
                     con = DbConnectionManager.getConnection();
                     pstmt = con.prepareStatement(GET_SMS_BY_JID);
+                    pstmt.setString(1,jid);
                     rs = pstmt.executeQuery();
 
                     while (rs.next()) {
@@ -88,7 +89,7 @@ public class DbRuleManager {
                 finally {
                     DbConnectionManager.closeConnection(pstmt, con);
                 }
-            }
+            
         }
 
 
@@ -98,8 +99,7 @@ public class DbRuleManager {
     public Msn getMsn(String jid) {
         Msn msn = null;
 
-        synchronized (msn) {
-            if (rules.isEmpty()) {
+        synchronized (GET_MSN_BY_JID) {
                 Connection con = null;
                 PreparedStatement pstmt = null;
                 ResultSet rs = null;
@@ -124,7 +124,6 @@ public class DbRuleManager {
                 finally {
                     DbConnectionManager.closeConnection(pstmt, con);
                 }
-            }
         }
 
 
@@ -289,7 +288,10 @@ public class DbRuleManager {
                         while (rs.next()) {
                             Rule rule = null;
 
+
                             String ruleType = rs.getString(1);
+                            Log.info("ruleType:"+ruleType);
+                            Log.info("dispatch:"+Dispatch.class.getName());
                             if (ruleType.equals(Reject.class.getName()))
                                 rule = new Reject();
                             else if (ruleType.equals(Pass.class.getName()))

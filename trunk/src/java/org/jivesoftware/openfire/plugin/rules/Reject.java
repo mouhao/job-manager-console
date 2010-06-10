@@ -17,6 +17,7 @@ public class Reject extends AbstractRule implements Rule {
     }
 
     public Packet doAction(Packet packet) throws PacketRejectedException {
+        Log.info("Reject from "+packet.getFrom()+" to "+packet.getTo());
         SessionManager sessionManager = SessionManager.getInstance();
         ClientSession clientSession = sessionManager.getSession(packet.getFrom());
         Packet rejectPacket;

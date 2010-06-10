@@ -13,8 +13,6 @@ public class TestMsn {
     public static void main(String[] args) throws InterruptedException {
         MsnRobot smn = MsnRobot.getInstance();
         smn.sendMessage(Email.parseStr("songancha@hotmail.com"), "测试消息");
-
-
     }
 }
 
