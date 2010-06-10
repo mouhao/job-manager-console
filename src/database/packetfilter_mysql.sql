@@ -17,14 +17,17 @@ CREATE TABLE ofMsn(
    id           BIGINT          NOT NULL AUTO_INCREMENT,
    jid          varchar(255)  ,
    msn          varchar(255)  ,
-   enable       boolean
+   enable       boolean,
+   PRIMARY KEY(id)
 );
 
 CREATE TABLE ofSms(
    id           BIGINT          NOT NULL AUTO_INCREMENT,
    jid          varchar(255)  ,
    cellphone    varchar(20)  ,
-   enable       boolean
+   enable       boolean,
+   PRIMARY KEY(id)
+
 );
 
-INSERT INTO ofVersion(name,version) values('packetfilter',2);
+INSERT INTO ofVersion(name,version) values('packetfilter',3);

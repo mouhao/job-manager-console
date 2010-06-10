@@ -296,6 +296,8 @@ public class DbRuleManager {
                                 rule = new Pass();
                             else if (ruleType.equals(Drop.class.getName()))
                                 rule = new Drop();
+                            else if(ruleType.equals(Dispatch.class.getName()))
+                                rule = new Dispatch();
 
 
                             rule.setRuleId(rs.getString(2));

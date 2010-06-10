@@ -6,6 +6,7 @@ import org.jivesoftware.openfire.group.GroupManager;
 import org.jivesoftware.openfire.group.GroupNotFoundException;
 import org.jivesoftware.openfire.interceptor.PacketRejectedException;
 import org.jivesoftware.openfire.plugin.msn.MsnRobot;
+import org.jivesoftware.openfire.plugin.sms.SmsRobot;
 import org.jivesoftware.openfire.session.ClientSession;
 import org.jivesoftware.util.JiveGlobals;
 import org.jivesoftware.util.Log;
@@ -31,21 +32,23 @@ public class Dispatch extends AbstractRule implements Rule {
         SessionManager sessionManager = SessionManager.getInstance();
         ClientSession clientSession = sessionManager.getSession(packet.getFrom());
         if (packet instanceof Message) {
-            clientSession.process(packet); //Ê×ÏÈ·¢¸øopenfireµÄÓÃ»§
-            //·¢¸øMSN
+            clientSession.process(packet); //ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½openfireï¿½ï¿½ï¿½Ã»ï¿½
+            //ï¿½ï¿½ï¿½ï¿½MSN
             try {
                 Group group = GroupManager.getInstance().getProvider().getGroup(packet.getTo().toBareJID());
                 Iterator<JID> members = group.getMembers().iterator();
                 DbRuleManager drm = DbRuleManager.getInstance();
                 MsnRobot msnRobot = MsnRobot.getInstance();
+                SmsRobot smsRobot=SmsRobot.getInstance();
                 while (members.hasNext()) {
                     JID member = members.next();
-                    Msn msn = drm.getMsn(member.toBareJID());//·¢¸ømsn
+                    Msn msn = drm.getMsn(member.toBareJID());//ï¿½ï¿½ï¿½ï¿½msn
+                    String msg = "[" + ((Message) packet).getSubject() + "]:" + ((Message) packet).getBody();
                     if (msnRobot.isOnlie(msn.getMsn())) {
-                        String msg = "[" + ((Message) packet).getSubject() + "]:" + ((Message) packet).getBody();
                         msnRobot.sendMessage(msn.getMsn(), msg);
                     } else {
-                        Sms sms = drm.getSms(member.toBareJID());//·¢¸øÊÖ»ú
+                        Sms sms = drm.getSms(member.toBareJID());//
+                        smsRobot.sendSmsMsg(sms.getCellphone(),msg);
                     }
                 }
             } catch (GroupNotFoundException e) {
