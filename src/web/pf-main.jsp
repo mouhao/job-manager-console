@@ -138,7 +138,7 @@
         </tbody>
     </table>
     </div>
-<input type="button" ONCLICK="window.location.href='msn-form.jsp'" name="create" value="<fmt:message key="pf.create.new.sms"/>">
+<input type="button" ONCLICK="window.location.href='sms-form.jsp'" name="create" value="<fmt:message key="pf.create.new.sms"/>">
 <hr>
 <div class="jive-table">
     <table cellpadding="0" cellspacing="0" border="0" width="100%">

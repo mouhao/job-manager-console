@@ -60,6 +60,7 @@ public class DbRuleManager {
     private static final String GET_SMS_BY_ID = "select id,jid,cellphone,enable from ofSms where id=?";
     private static final String GET_ALL_SMS = "select id,jid,cellphone,enable from ofSms order by id desc";
     private static final String DELETE_SMS_BY_ID="delete from ofSms where id=?";
+    private static final String GET_SMS_BY_JID="select id,jid,cellphone,enable from ofSms where jid=?";
 
     public List<Msn> getAllMsn() {
         List<Msn> msns = new ArrayList<Msn>();
@@ -238,7 +239,7 @@ public class DbRuleManager {
 
             pstmt.setString(1, jid);
             pstmt.setString(2, cellphone);
-            pstmt.setByte(3, new Byte("+enable+"));
+            pstmt.setInt(3,enable);
             pstmt.execute();
         } catch (SQLException sqle) {
             Log.error(sqle);
@@ -384,7 +385,7 @@ public class DbRuleManager {
 
             pstmt.setString(1, jid);
             pstmt.setString(2, msn);
-            pstmt.setByte(3, new Byte("+enable+"));
+            pstmt.setInt(3,enable);
             pstmt.execute();
         } catch (SQLException sqle) {
             Log.error(sqle);
@@ -788,5 +789,42 @@ public class DbRuleManager {
         if (!rules.isEmpty()) {
             rules.clear();
         }
+    }
+
+    public Sms getSmsByJid(String jid) {
+             Sms sms = null;
+
+        synchronized (GET_SMS_BY_JID) {
+
+            Connection con = null;
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+            try {
+                con = DbConnectionManager.getConnection();
+                pstmt = con.prepareStatement(GET_SMS_BY_JID);
+                pstmt.setString(1, jid);
+                rs = pstmt.executeQuery();
+
+                while (rs.next()) {
+                    sms = new Sms();
+                    sms.setId(rs.getLong(1));
+                    sms.setJid(rs.getString(2));
+                    sms.setCellphone(rs.getString(3));
+                    sms.setEnable(rs.getBoolean(4));
+
+                }
+
+
+            } catch (SQLException sqle) {
+                Log.error(sqle);
+            }
+            finally {
+                DbConnectionManager.closeConnection(pstmt, con);
+            }
+
+        }
+
+
+        return sms;
     }
 }
