@@ -27,37 +27,42 @@ public class Dispatch extends AbstractRule implements Rule {
     }
 
     public Packet doAction(Packet packet) throws PacketRejectedException {
-        Log.info("===========================Dispatch packet================================");
         SessionManager sessionManager = SessionManager.getInstance();
         ClientSession clientSession = sessionManager.getSession(packet.getFrom());
-        Log.info("Message?:" + (packet instanceof Message));
-        Log.info("Presence?:" + (packet instanceof Presence));
-        Log.info("IQ?:" + (packet instanceof IQ));
         if (packet instanceof Message) {
             try {
                 Group group = GroupManager.getInstance().getProvider().getGroup(this.getDestination());
                 Log.info("Group:" + group.getName());
                 Iterator<JID> members = group.getMembers().iterator();
-
                 DbRuleManager drm = DbRuleManager.getInstance();
                 MsnRobot msnRobot = MsnRobot.getInstance();
                 SmsRobot smsRobot = SmsRobot.getInstance();
                 while (members.hasNext()) {
                     JID member = members.next();
-                    Log.info("member:" + member.toBareJID());
-                    Msn msn = drm.getMsn(member.toBareJID());
+                    String member_name = member.toBareJID().substring(0, member.toBareJID().indexOf("@"));
+                    Log.info("member:" + member_name);
+                    Msn msn = drm.getMsn(member_name);
                     if (msn != null) {
                         String msg = "[" + ((Message) packet).getSubject() + "]:" + ((Message) packet).getBody();
+                        //先判断是不是联系人
+                        if (!msnRobot.isContect(msn.getMsn())) {
+                            Log.info("Add "+msn.getMsn()+" To Msn Contect List");
+                            msnRobot.addFriend(msn.getMsn());
+                            continue;
+                        }
                         if (msnRobot.isOnlie(msn.getMsn())) {
+                            Log.info("Send Message To "+member_name+"'s Msn:"+msn.getMsn());
                             msnRobot.sendMessage(msn.getMsn(), msg);
                         } else {
-                            Sms sms = drm.getSms(member.toBareJID());
+                            Sms sms = drm.getSmsByJid(member_name);
                             if (sms != null) {
+                                Log.info("Send Sms Message To "+member_name+"'s CellPhone:"+sms.getCellphone());
                                 smsRobot.sendSmsMsg(sms.getCellphone(), msg);
                             }
+
                         }
-                    } else{
-                        Log.error("user:"+member+" has no MSN");
+                    } else {
+                        Log.error("user:" + member_name + " has no MSN");
                     }
                 }
             } catch (GroupNotFoundException e) {

@@ -32,10 +32,6 @@ public class PacketFilter {
         if (packet.getTo() == null || packet.getFrom() == null) return null;
         List<Rule> rules=ruleManager.getRules();
         for (Rule rule : rules) {
-            Log.info("RULE:"+rule.getRuleType());
-            Log.info("typeMatch:"+typeMatch(rule.getPackeType(), packet));
-            Log.info("sourceDestMatch:("+rule.getDestType()+","+rule.getDestination()+","+packet.getTo()+")"+sourceDestMatch(rule.getDestType(), rule.getDestination(), packet.getTo()));
-            Log.info("sourceDestMatch:("+rule.getSourceType()+","+rule.getSource()+","+packet.getFrom()+")"+sourceDestMatch(rule.getSourceType(), rule.getSource(), packet.getFrom()));
             if (!rule.isDisabled() &&
                     typeMatch(rule.getPackeType(), packet) &&
                     sourceDestMatch(rule.getDestType(), rule.getDestination(), packet.getTo()) &&
@@ -123,16 +119,15 @@ public class PacketFilter {
         Group group = null;
         try {
             group = GroupManager.getInstance().getProvider().getGroup(rulegroup);
-            Log.info("GROUP:"+group.getName());
+
             Iterator<JID> itr=group.getMembers().iterator();
-            Log.info("=================members=========================");
+
             while(itr.hasNext()){
                 JID jid=itr.next();
-                Log.info("JID:"+jid.toBareJID());
 
             }
-            Log.info("=================end=========================");
-            Log.info("User:"+packetToFrom+" is in Group:"+group.getName()+"?:"+group.isUser(packetToFrom));
+
+
         } catch (GroupNotFoundException e) {
             e.printStackTrace();
         }

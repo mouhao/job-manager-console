@@ -61,6 +61,9 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
     }
     public void interceptPacket(Packet packet, Session session, boolean incoming, boolean processed) throws PacketRejectedException {
 
+
+        Log.info(packet.toXML());
+
         if (processed) {
             return;
         }
@@ -68,7 +71,7 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
         Rule rule = pf.findMatch(packet);
 
         if (rule != null) {
-            Log.info("Matched rule:"+rule.getDisplayName()+"===================");
+            Log.info("Matched Rule:"+rule.getDisplayName());
             rule.doAction(packet);
         }
     }

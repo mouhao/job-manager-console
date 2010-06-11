@@ -74,15 +74,37 @@ public class MsnRobot {
     }
 
     public boolean isOnlie(String email){
-        
-        if(this.messenger.getContactList().getContactByEmail(Email.parseStr(email)).getStatus().equals(MsnUserStatus.OFFLINE)){
-            return false;
-        }else{
-            return true;
+        boolean online=false;
+        try{
+             online=this.messenger.getContactList().getContactByEmail(Email.parseStr(email)).getStatus().equals(MsnUserStatus.OFFLINE);
+        }catch(Exception e){
+            online=false;
         }
-
+        return online;
     }
 
+    /**
+     * 判断是不是好友
+     * @param email
+     * @return
+     */
+    public boolean isContect(String email){
+        MsnContact contect=null;
+        try{
+            contect=this.messenger.getContactList().getContactByEmail(Email.parseStr(email));
+        }catch(Exception e){
+            contect=null;
+        }
+        return contect==null?false:true;
+    }
+
+    public void addFriend(String email){
+        try{
+        this.messenger.addFriend(Email.parseStr(email),"畅游监控助手");
+        }catch(Exception e){
+            
+        }
+    }
 
     public void sendMessage(String email, String msg) {
         this.messenger.sendText(Email.parseStr(email), msg);
