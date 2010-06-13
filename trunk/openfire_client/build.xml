@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<project name="client" default="jar" basedir=".">
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="dist.dir" value="${basedir}/out"/>
+    <property name="compile.dir" value="${dist.dir}/classes"/>
+
+    <target name="init" description="init">
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="compile" depends="init" description="Compiles source code">
+        <mkdir dir="${compile.dir}"/>
+        <javac
+                destdir="${compile.dir}"
+                includeAntRuntime="no"
+                debug="on"
+                source="1.5"
+                target="1.5"
+                >
+            <src path="${src.dir}"/>
+            <patternset>
+                <include name="**/*.java"/>
+            </patternset>
+            <classpath>
+                <path id="complie.dependenceis">
+                    <fileset dir="${lib.dir}" includes="*.jar"/>
+                </path>
+            </classpath>
+        </javac>
+    </target>
+
+
+    <target name="jar" description="packet jar" depends="compile">
+    <jar jarfile="${dist.dir}/client.jar">
+        <fileset dir="${compile.dir}"/>
+        <fileset dir="${src.dir}" includes="**/*.properties"/>
+        <manifest>
+            <attribute name="Main-Class" value="com.sohu.game.openfire.client.Client"/>
+            <attribute name="Class-Path" value="./lib/smack.jar ./lib/smackx.jar"/>
+        </manifest>
+    </jar>
+        <copydir dest="${dist.dir}/lib" src="${lib.dir}" />  
+    </target>
+
+
+</project>
+
+        
