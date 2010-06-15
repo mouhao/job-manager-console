@@ -1,12 +1,3 @@
-<%@ page import="org.jivesoftware.openfire.XMPPServer,
-                 org.jivesoftware.openfire.group.Group"
-        %>
-
-<%@ page import="org.jivesoftware.openfire.plugin.rules.*" %>
-<%@ page import="org.jivesoftware.openfire.user.UserManager" %>
-<%@ page import="org.jivesoftware.util.ParamUtils" %>
-<%@ page import="org.xmpp.component.Component" %>
-<%@ page import="java.util.Collection" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="org.jivesoftware.openfire.RoutingTable" %>
@@ -31,12 +22,18 @@
     Map<String, String> errors = new HashMap<String, String>();
 
     if (cancel) {
-        response.sendRedirect("pf-main.jsp");
+        String user = request.getParameter("user");
+        if (user != null & !"".equals(user)) {
+             response.sendRedirect("pf-main.jsp?user="+user);
+        } else {
+            response.sendRedirect("pf-main.jsp");
+        }
         return;
     }
     if (create) {
+        String input_jid =null;
        try {
-        String input_jid = request.getParameter("jid");
+        input_jid = request.getParameter("jid");
         String input_cellPhone = request.getParameter("cellphone");
         String input_enable = request.getParameter("enable");
         if (input_jid == null || "".equals(input_jid)) {
@@ -62,7 +59,7 @@
             errors.put("add_sms_error", e.getLocalizedMessage());
         }
         if (errors.isEmpty()) {
-            response.sendRedirect("pf-main.jsp");
+            response.sendRedirect("pf-main.jsp?user="+input_jid);
         }
 
 

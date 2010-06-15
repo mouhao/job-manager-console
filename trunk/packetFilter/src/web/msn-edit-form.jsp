@@ -1,14 +1,6 @@
-<%@ page import="org.jivesoftware.openfire.XMPPServer,
-                 org.jivesoftware.openfire.component.InternalComponentManager,
-                 org.jivesoftware.openfire.group.Group,
-                 org.jivesoftware.openfire.plugin.DBManager"
+<%@ page import="org.jivesoftware.openfire.plugin.DBManager"
         %>
-<%@ page import="org.jivesoftware.openfire.plugin.rules.*" %>
-<%@ page import="org.jivesoftware.openfire.user.UserManager" %>
-<%@ page import="org.jivesoftware.util.ParamUtils" %>
-<%@ page import="org.xmpp.component.Component" %>
-<%@ page import="org.xmpp.packet.JID" %>
-<%@ page import="java.util.Collection" %>
+
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
@@ -36,7 +28,12 @@
     Map<String, String> errors = new HashMap<String, String>();
 
     if (cancel) {
-        response.sendRedirect("pf-main.jsp");
+        String user = request.getParameter("user");
+        if (user != null & !"".equals(user)) {
+            response.sendRedirect("pf-main.jsp?user=" + user);
+        } else {
+            response.sendRedirect("pf-main.jsp");
+        }
         return;
     }
     if (edit) {
@@ -44,16 +41,17 @@
         msn = dbManager.getMsnById(id);
     }
     if (editSave) {
+        msn = new Msn();
         try {
             String input_id = request.getParameter("id");
             String input_jid = request.getParameter("jid");
             String input_msn = request.getParameter("msn");
             String input_enable = request.getParameter("enable");
-            msn = new Msn();
+
             msn.setId(Long.parseLong(input_id));
             msn.setJid(input_jid);
-            if(input_msn==null||"".equals(input_msn)){
-                errors.put("edit_msn_error","Msn can not be null");
+            if (input_msn == null || "".equals(input_msn)) {
+                errors.put("edit_msn_error", "Msn can not be null");
                 response.sendRedirect("pf-main.jsp");
             }
             msn.setMsn(input_msn);
@@ -69,7 +67,7 @@
             errors.put("edit_msn_error", e.getLocalizedMessage());
         }
         if (errors.isEmpty()) {
-            response.sendRedirect("pf-main.jsp");
+            response.sendRedirect("pf-main.jsp?user=" + msn.getJid());
         }
     }
 %>

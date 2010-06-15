@@ -18,13 +18,14 @@ public class Client {
     private static final String PACKETID = "cyou_monitor_";
     private XMPPConnection connection=null;
     public static void main(String[] args) throws XMPPException, IOException {
-        String group = args[0];
-        String subject = args[1];
-        String message = args[2];
         if (args.length != 3) {
             System.out.println("Useage:java -jar group msg");
             System.exit(-1);
         }
+        String group = args[0];
+        String subject = args[1];
+        String message = args[2];
+
         Client.getInstance().sendMessage(group,subject,message);
 
     }

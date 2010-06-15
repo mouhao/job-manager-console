@@ -160,11 +160,11 @@
             <td><strike><%=msn.isEnable()%>
             </strike></td>
             <%}%>
-            <td><a href="delete-msn.jsp?id=<%=msn.getId()%>"><img src="/images/delete-16x16.gif"
+            <td><a href="delete-msn.jsp?id=<%=msn.getId()%>&user=<%=user%>"><img src="/images/delete-16x16.gif"
                                                                   width="16" height="16"
                                                                   border="0"
                                                                   alt="<fmt:message key="global.click_delete" />"></a>
-                <a href="msn-edit-form.jsp?edit=<%=msn.getId()%>"><img src="/images/edit-16x16.gif" width="16"
+                <a href="msn-edit-form.jsp?edit=<%=msn.getId()%>&user=<%=user%>"><img src="/images/edit-16x16.gif" width="16"
                                                                        height="16" border="0"
                                                                        alt="<fmt:message key="pf.click.edit"/>"></a>
             </td>
@@ -173,7 +173,7 @@
         </tbody>
     </table>
 </div>
-<input type="button" ONCLICK="window.location.href='msn-form.jsp'" name="create"
+<input type="button" ONCLICK="window.location.href='msn-form.jsp?user=<%=user%>'" name="create"
        value="<fmt:message key="pf.create.new.msn"/>">
 
 
@@ -216,11 +216,11 @@
             <td><strike><%=sms.isEnable()%>
             </strike></td>
             <%}%>
-            <td><a href="delete-sms.jsp?id=<%=sms.getId()%>"><img src="/images/delete-16x16.gif"
+            <td><a href="delete-sms.jsp?id=<%=sms.getId()%>&user=<%=user%>"><img src="/images/delete-16x16.gif"
                                                                   width="16" height="16"
                                                                   border="0"
                                                                   alt="<fmt:message key="global.click_delete" />"></a>
-                <a href="sms-edit-form.jsp?edit=<%=sms.getId()%>"><img src="/images/edit-16x16.gif" width="16"
+                <a href="sms-edit-form.jsp?edit=<%=sms.getId()%>&user=<%=user%>"><img src="/images/edit-16x16.gif" width="16"
                                                                        height="16" border="0"
                                                                        alt="<fmt:message key="pf.click.edit"/>"></a>
             </td>
@@ -229,7 +229,7 @@
         </tbody>
     </table>
 </div>
-<input type="button" ONCLICK="window.location.href='sms-form.jsp'" name="create"
+<input type="button" ONCLICK="window.location.href='sms-form.jsp?user=<%=user%>'" name="create"
        value="<fmt:message key="pf.create.new.sms"/>">
 
 

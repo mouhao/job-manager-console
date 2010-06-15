@@ -1,6 +1,4 @@
-
 <%@ page import="org.jivesoftware.util.*"%>
-<%@ page import="org.jivesoftware.openfire.plugin.rules.*" %>
 <%@ page import="org.jivesoftware.openfire.plugin.sms.Sms" %>
 <%@ page import="org.jivesoftware.openfire.plugin.DBManager" %>
 
