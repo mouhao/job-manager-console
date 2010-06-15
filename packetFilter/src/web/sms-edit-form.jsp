@@ -1,19 +1,9 @@
-<%@ page import="org.jivesoftware.openfire.XMPPServer,
-                 org.jivesoftware.openfire.component.InternalComponentManager,
-                 org.jivesoftware.openfire.group.Group,
-                 org.jivesoftware.openfire.plugin.DBManager"
-        %>
-<%@ page import="org.jivesoftware.openfire.plugin.rules.*" %>
-<%@ page import="org.jivesoftware.openfire.user.UserManager" %>
-<%@ page import="org.jivesoftware.util.ParamUtils" %>
-<%@ page import="org.xmpp.component.Component" %>
-<%@ page import="org.xmpp.packet.JID" %>
-<%@ page import="java.util.Collection" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="org.jivesoftware.util.Log" %>
 <%@ page import="org.jivesoftware.openfire.plugin.sms.Sms" %>
+<%@ page import="org.jivesoftware.openfire.plugin.DBManager" %>
 
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
@@ -36,7 +26,12 @@
     Map<String, String> errors = new HashMap<String, String>();
 
     if (cancel) {
-        response.sendRedirect("pf-main.jsp");
+        String user = request.getParameter("user");
+        if (user != null & !"".equals(user)) {
+             response.sendRedirect("pf-main.jsp?user="+user);
+        } else {
+            response.sendRedirect("pf-main.jsp");
+        }
         return;
     }
     if (edit) {
@@ -44,9 +39,10 @@
         sms = dbManager.getSmsById(id);
     }
     if (editSave) {
+        String input_jid=null;
         try {
             String input_id = request.getParameter("id");
-            String input_jid = request.getParameter("jid");
+            input_jid = request.getParameter("jid");
             String input_cellphone = request.getParameter("cellphone");
             String input_enable = request.getParameter("enable");
             sms = new Sms();
@@ -55,7 +51,7 @@
             sms.setJid(input_jid);
             if(input_cellphone==null||"".equals(input_cellphone)){
                 errors.put("edit_msn_error","cellphone can not be null");
-                response.sendRedirect("pf-main.jsp");
+                response.sendRedirect("pf-main.jsp?user="+input_jid);
             }
             sms.setCellphone(input_cellphone);
             if (input_enable == null) {
@@ -70,7 +66,7 @@
             errors.put("edit_msn_error", e.getLocalizedMessage());
         }
         if (errors.isEmpty()) {
-            response.sendRedirect("pf-main.jsp");
+            response.sendRedirect("pf-main.jsp?user="+input_jid);
         }
     }
 %>
