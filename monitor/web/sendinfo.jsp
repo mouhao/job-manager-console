@@ -24,7 +24,7 @@
         }
 
         try {
-            ConnectionConfiguration conf = new ConnectionConfiguration("61.135.177.38", 5222);
+            ConnectionConfiguration conf = new ConnectionConfiguration("1.1.1.1", 1111);
             XMPPConnection connection = new XMPPConnection(conf);
             connection.connect();
             Message packet = new Message();
