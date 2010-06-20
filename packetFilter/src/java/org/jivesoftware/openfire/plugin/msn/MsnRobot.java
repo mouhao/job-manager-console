@@ -56,6 +56,7 @@ public class MsnRobot {
         messenger
                 .setSupportedProtocol(new MsnProtocol[]{MsnProtocol.MSNP11});
         messenger.getOwner().setInitStatus(MsnUserStatus.ONLINE);
+        messenger.getOwner().setInitDisplayName("畅游监控助手");
         messenger.setLogIncoming(true);
         messenger.setLogOutgoing(true);
         messenger.addListener(new MsnListener());
