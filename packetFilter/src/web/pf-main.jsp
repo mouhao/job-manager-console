@@ -35,7 +35,7 @@
     <title>
         <fmt:message key="pf.summary.title"/>
     </title>
-    <meta name="pageID" content="packetFilter"/>
+    <meta name="pageID" content="groups"/>
     <meta name="helpPage" content=""/>
     <script language="JavaScript" type="text/javascript" src="scripts/packetfilter.js"></script>
 
@@ -60,7 +60,7 @@
             while (groups.hasNext()) {
                 String groupname = groups.next();
                 Group group = GroupManager.getInstance().getProvider().getGroup(groupname);
-
+                
 
         %>
 

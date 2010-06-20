@@ -4,6 +4,8 @@
 <%@ page import="org.jivesoftware.util.Log" %>
 <%@ page import="org.jivesoftware.openfire.plugin.msn.Msn" %>
 <%@ page import="org.jivesoftware.openfire.plugin.DBManager" %>
+<%@ page import="org.jivesoftware.openfire.user.User" %>
+<%@ page import="java.util.Iterator" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 
@@ -11,6 +13,7 @@
 <%
     webManager.init(request, response, session, application, out);
     DBManager dbManager = DBManager.getInstance();
+    Iterator<User> users = webManager.getUserManager().getUsers().iterator();
 
     Msn msn = null;
     //Get Action
@@ -71,7 +74,7 @@
         <fmt:message key="pf.create.new.msn"/>
 
     </title>
-    <meta name="pageID" content="packetFilter"/>
+    <meta name="pageID" content="addMsn"/>
     <script language="JavaScript" type="text/javascript" src="scripts/packetfilter.js"></script>
 </head>
 <body>
@@ -104,7 +107,21 @@
             <tr class="jive-even">
                 <td>JID</td>
                 <td>
-                    <input type="text" name="jid" value="" size="40"/>
+                    <select name="jid" id="jid">
+                        <%
+                         if(users!=null){
+                             while(users.hasNext()){
+                                 User user=users.next();%>
+                            <option value="<%=user.getUsername()%>"><%=user.getUsername()%></option>
+                        <%
+                             }
+                         }
+
+                        %>
+                    </select>
+
+
+                   <%// <input type="text" name="jid" value="" size="40"/>%>
                 </td>
             </tr>
             <tr class="jive-odd">
