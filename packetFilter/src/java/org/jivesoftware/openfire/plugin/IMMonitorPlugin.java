@@ -13,11 +13,11 @@ import org.xmpp.packet.Packet;
 
 import java.io.File;
 
-public class PacketFilterPlugin implements Plugin, PacketInterceptor {
+public class IMMonitorPlugin implements Plugin, PacketInterceptor {
 
     private static PluginManager pluginManager;
 
-    public PacketFilterPlugin() {
+    public IMMonitorPlugin() {
         interceptorManager = InterceptorManager.getInstance();
     }
 

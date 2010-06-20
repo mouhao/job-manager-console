@@ -30,4 +30,4 @@ CREATE TABLE IF NOT EXISTS ofSms(
 
 );
 
-INSERT INTO ofVersion(name,version) values('packetfilter',3);
+INSERT INTO ofVersion(name,version) values('imMonitor',1);
