@@ -25,7 +25,7 @@
 <html>
     <head>
         <title><fmt:message key="group.summary.title"/></title>
-        <meta name="pageID" content="group-summary"/>
+        <meta name="pageID" content="editgroup"/>
         <meta name="helpPage" content="about_users_and_groups.html"/>
     </head>
     <body>

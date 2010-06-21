@@ -36,6 +36,9 @@
                 <item id="addgroup" name="新建组"
                       url="group-create.jsp"
                       description="新建消息接收组"/>
+                <item id="editgroup" name="编辑组"
+                      url="group-summary.jsp"
+                      description="编辑组"/>                
                 <item id="users" name="用户"
                       url="user-summary.jsp"
                       description="显示用户"/>

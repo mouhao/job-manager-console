@@ -87,7 +87,7 @@
 <html>
     <head>
         <title><fmt:message key="user.edit.form.title"/></title>
-        <meta name="subPageID" content="users"/>
+        <meta name="pageID" content="adduser"/>
         <meta name="extraParams" content="<%= "username="+URLEncoder.encode(username, "UTF-8") %>"/>
     </head>
     <body>

@@ -66,7 +66,7 @@
 <html>
     <head>
         <title><fmt:message key="user.password.title"/></title>
-        <meta name="subPageID" content="users"/>
+        <meta name="pageID" content="adduser"/>
         <meta name="extraParams" content="<%= "username="+URLEncoder.encode(username, "UTF-8") %>"/>
         <meta name="helpPage" content="change_a_user_password.html"/>
     </head>
