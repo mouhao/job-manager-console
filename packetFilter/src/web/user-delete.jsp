@@ -73,7 +73,7 @@
 <html>
     <head>
         <title><fmt:message key="user.delete.title"/></title>
-        <meta name="subPageID" content="users"/>
+        <meta name="pageID" content="adduser"/>
         <meta name="extraParams" content="<%= "username="+URLEncoder.encode(username, "UTF-8") %>"/>
         <meta name="helpPage" content="remove_a_user_from_the_system.html"/>
     </head>

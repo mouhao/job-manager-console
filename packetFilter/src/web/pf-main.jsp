@@ -173,8 +173,7 @@
         </tbody>
     </table>
 </div>
-<input type="button" ONCLICK="window.location.href='msn-form.jsp?user=<%=user%>'" name="create"
-       value="<fmt:message key="pf.create.new.msn"/>">
+
 
 
 <br>
@@ -229,8 +228,7 @@
         </tbody>
     </table>
 </div>
-<input type="button" ONCLICK="window.location.href='sms-form.jsp?user=<%=user%>'" name="create"
-       value="<fmt:message key="pf.create.new.sms"/>">
+
 
 
 <%}%>

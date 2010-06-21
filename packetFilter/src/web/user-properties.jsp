@@ -78,7 +78,7 @@
 <html>
     <head>
         <title><fmt:message key="user.properties.title"/></title>
-        <meta name="subPageID" content="users"/>
+        <meta name="pageID" content="adduser"/>
         <meta name="extraParams" content="<%= "username="+URLEncoder.encode(username, "UTF-8") %>"/>
         <meta name="helpPage" content="edit_user_properties.html"/>
     </head>
