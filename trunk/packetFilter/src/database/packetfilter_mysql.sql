@@ -1,18 +1,19 @@
-CREATE TABLE IF NOT EXISTS ofMsn(
-   id           BIGINT          NOT NULL AUTO_INCREMENT,
-   jid          varchar(255)  ,
-   msn          varchar(255)  ,
-   enable       boolean,
-   PRIMARY KEY(id)
-);
+CREATE TABLE `ofMsn` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `jid` VARCHAR(255) DEFAULT NULL,
+  `msn` VARCHAR(255) DEFAULT NULL,
+  `enable` TINYINT(1) DEFAULT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `jid` (`jid`)
+)DEFAULT CHARSET=utf8 ;
 
-CREATE TABLE IF NOT EXISTS ofSms(
-   id           BIGINT          NOT NULL AUTO_INCREMENT,
-   jid          varchar(255)  ,
-   cellphone    varchar(20)  ,
-   enable       boolean,
-   PRIMARY KEY(id)
-
-);
+CREATE TABLE `ofSms` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `jid` VARCHAR(255) DEFAULT NULL,
+  `cellphone` VARCHAR(20) DEFAULT NULL,
+  `enable` TINYINT(1) DEFAULT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `jid` (`jid`)
+) DEFAULT CHARSET=utf8 ;
 
 INSERT INTO ofVersion(name,version) values('packetfilter',1);
