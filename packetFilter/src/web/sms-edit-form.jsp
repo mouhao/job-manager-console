@@ -75,7 +75,7 @@
     <title>
         <fmt:message key="pf.save.edit.sms"/>
     </title>
-    <meta name="pageID" content="packetFilter"/>
+    <meta name="pageID" content="addSMS"/>
     <script language="JavaScript" type="text/javascript" src="scripts/packetfilter.js"></script>
 </head>
 <body>

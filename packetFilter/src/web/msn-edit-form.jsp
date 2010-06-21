@@ -76,7 +76,7 @@
     <title>
         <fmt:message key="pf.save.edit.msn"/>
     </title>
-    <meta name="pageID" content="packetFilter"/>
+    <meta name="pageID" content="addMsn"/>
     <script language="JavaScript" type="text/javascript" src="scripts/packetfilter.js"></script>
 </head>
 <body>

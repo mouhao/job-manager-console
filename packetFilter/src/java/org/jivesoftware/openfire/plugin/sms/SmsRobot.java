@@ -31,6 +31,11 @@ public class SmsRobot {
 
 
     public void sendSmsMsg(String phone, String msg) {
+        if(msg==null)
+        return;
+        if(msg.length()>=70){
+            msg=msg.substring(0,69);
+        }
         this.clinet.send(phone, msg, CNT);
     }
 }
