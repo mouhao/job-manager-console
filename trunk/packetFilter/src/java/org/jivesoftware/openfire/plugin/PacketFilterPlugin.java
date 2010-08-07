@@ -6,6 +6,7 @@ import org.jivesoftware.openfire.interceptor.InterceptorManager;
 import org.jivesoftware.openfire.interceptor.PacketInterceptor;
 import org.jivesoftware.openfire.interceptor.PacketRejectedException;
 import org.jivesoftware.openfire.plugin.msn.MsnRobot;
+import org.jivesoftware.openfire.plugin.msn.MsnSafed;
 import org.jivesoftware.openfire.plugin.sms.SmsRobot;
 import org.jivesoftware.openfire.session.Session;
 import org.jivesoftware.util.Log;
@@ -35,6 +36,9 @@ public class PacketFilterPlugin implements Plugin, PacketInterceptor {
         this.pluginManager = manager;
         pf = PacketFilter.getInstance();
         MsnRobot.getInstance();
+        MsnSafed msnsafed=new MsnSafed();
+        msnsafed.setDaemon(true);
+        msnsafed.start();
         SmsRobot.getInstance();
 
     }

@@ -21,7 +21,7 @@ import org.apache.commons.logging.LogFactory;
 public class MsnRobot {
 
     private static final Log log = LogFactory.getLog(MsnRobot.class);
-    private static final String EMAIL = "cyou_monitor@live.cn";
+    private static final String EMAIL = "songjiao001@hotmail.com";
     private static final String PASSWORD = "7days1week";
     private static MsnRobot instance;
     private static boolean contactListInitCompleted = false;
