@@ -50,13 +50,7 @@ public class BasicMessenger {
         MsnMessenger messenger = MsnMessengerFactory.createMsnMessenger(email,
                 password);
 
-        //MsnMessenger support all protocols by default
-        //messenger.setSupportedProtocol(new MsnProtocol[] { MsnProtocol.MSNP8 });
 
-        //default init status is online, 
-        //messenger.getOwner().setInitStatus(MsnUserStatus.BUSY);
-
-        //log incoming message
         messenger.setLogIncoming(true);
 
         //log outgoing message

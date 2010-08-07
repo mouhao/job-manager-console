@@ -12,6 +12,7 @@
     <orderEntry type="library" name="merge" level="project" />
     <orderEntry type="module" module-name="Openfire_src" />
     <orderEntry type="library" name="msn" level="project" />
+    <orderEntry type="library" name="openfire_client" level="project" />
   </component>
 </module>
 
