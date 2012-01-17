@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="merge">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jaxen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/slf4j-simple-1.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jzlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/mina-filter-compression.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jstun-0.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/stringprep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/proxool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/mina-filter-ssl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/shaj.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/mina-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/slf4j-api-1.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jmdns.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/commons-codec.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/xpp3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/commons-httpclient.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jdom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/rome.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jetty-sslengine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/rome-fetcher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jetty.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/dbutil.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/commons-lang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/sitemesh.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jetty-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/merge/dom4j.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

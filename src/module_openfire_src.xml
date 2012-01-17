@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_openfire_src" default="compile.module.openfire_src">
+  <dirname property="module.openfire_src.basedir" file="${ant.file.module_openfire_src}"/>
+  
+  <property name="module.jdk.home.openfire_src" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.openfire_src" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.openfire_src" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.openfire_src" value="${compiler.args}"/>
+  
+  <property name="openfire_src.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/Openfire_src"/>
+  <property name="openfire_src.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/Openfire_src"/>
+  
+  <path id="openfire_src.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="openfire_src.module.classpath">
+    <path refid="${module.jdk.classpath.openfire_src}"/>
+    <path refid="library.lib4.classpath"/>
+    <path refid="library.dist.classpath"/>
+    <path refid="library.merge.classpath"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="openfire_src.runtime.module.classpath">
+    <pathelement location="${openfire_src.output.dir}"/>
+    <pathelement location="${openfire_src.testoutput.dir}"/>
+    <path refid="library.lib4.classpath"/>
+    <path refid="library.dist.classpath"/>
+    <path refid="library.merge.classpath"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.openfire_src">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.openfire_src">
+    <patternset refid="excluded.from.module.openfire_src"/>
+  </patternset>
+  
+  <path id="openfire_src.module.sourcepath">
+    <dirset dir="${module.openfire_src.basedir}">
+      <include name="java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.openfire_src" depends="compile.module.openfire_src.production,compile.module.openfire_src.tests" description="Compile module Openfire_src"/>
+  
+  <target name="compile.module.openfire_src.production" description="Compile module Openfire_src; production classes">
+    <mkdir dir="${openfire_src.output.dir}"/>
+    <javac2 destdir="${openfire_src.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.openfire_src}/javac">
+      <compilerarg line="${compiler.args.openfire_src}"/>
+      <bootclasspath refid="openfire_src.module.bootclasspath"/>
+      <classpath refid="openfire_src.module.classpath"/>
+      <src refid="openfire_src.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.openfire_src"/>
+    </javac2>
+    
+    <copy todir="${openfire_src.output.dir}">
+      <fileset dir="${module.openfire_src.basedir}/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.openfire_src.tests" depends="compile.module.openfire_src.production" description="compile module Openfire_src; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.openfire_src" description="cleanup module">
+    <delete dir="${openfire_src.output.dir}"/>
+    <delete dir="${openfire_src.testoutput.dir}"/>
+  </target>
+</project>

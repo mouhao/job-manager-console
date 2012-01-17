@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_packetfilter" default="compile.module.packetfilter">
+  <dirname property="module.packetfilter.basedir" file="${ant.file.module_packetfilter}"/>
+  
+  <property name="module.jdk.home.packetfilter" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.packetfilter" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.packetfilter" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.packetfilter" value="${compiler.args}"/>
+  
+  <property name="packetfilter.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/packetFilter"/>
+  <property name="packetfilter.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/packetFilter"/>
+  
+  <path id="packetfilter.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="packetfilter.module.classpath">
+    <path refid="${module.jdk.classpath.packetfilter}"/>
+    <path refid="library.merge.classpath"/>
+    <pathelement location="${openfire_src.output.dir}"/>
+    <pathelement location="${openfire_src.testoutput.dir}"/>
+    <path refid="library.msn.classpath"/>
+  </path>
+  
+  <path id="packetfilter.runtime.module.classpath">
+    <pathelement location="${packetfilter.output.dir}"/>
+    <pathelement location="${packetfilter.testoutput.dir}"/>
+    <path refid="library.merge.classpath"/>
+    <path refid="openfire_src.runtime.module.classpath"/>
+    <path refid="library.msn.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.packetfilter">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.packetfilter">
+    <patternset refid="excluded.from.module.packetfilter"/>
+  </patternset>
+  
+  <path id="packetfilter.module.sourcepath">
+    <dirset dir="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/src/plugins">
+      <include name="packetFilter/src/java"/>
+    </dirset>
+  </path>
+  
+  <path id="packetfilter.module.test.sourcepath">
+    <dirset dir="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/src/plugins">
+      <include name="packetFilter"/>
+      <include name="packetFilter/src/test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.packetfilter" depends="compile.module.packetfilter.production,compile.module.packetfilter.tests" description="Compile module packetFilter"/>
+  
+  <target name="compile.module.packetfilter.production" depends="compile.module.openfire_src" description="Compile module packetFilter; production classes">
+    <mkdir dir="${packetfilter.output.dir}"/>
+    <javac2 destdir="${packetfilter.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.packetfilter}/javac">
+      <compilerarg line="${compiler.args.packetfilter}"/>
+      <bootclasspath refid="packetfilter.module.bootclasspath"/>
+      <classpath refid="packetfilter.module.classpath"/>
+      <src refid="packetfilter.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.packetfilter"/>
+    </javac2>
+    
+    <copy todir="${packetfilter.output.dir}">
+      <fileset dir="${module.packetfilter.basedir}/src/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.packetfilter.tests" depends="compile.module.packetfilter.production" description="compile module packetFilter; test classes" unless="skip.tests">
+    <mkdir dir="${packetfilter.testoutput.dir}"/>
+    <javac2 destdir="${packetfilter.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.packetfilter}/javac">
+      <compilerarg line="${compiler.args.packetfilter}"/>
+      <classpath refid="packetfilter.module.classpath"/>
+      <classpath>
+        <path refid="packetfilter.module.classpath"/>
+        <pathelement location="${packetfilter.output.dir}"/>
+      </classpath>
+      <src refid="packetfilter.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.packetfilter"/>
+    </javac2>
+    
+    <copy todir="${packetfilter.testoutput.dir}">
+      <fileset dir="${module.packetfilter.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.packetfilter.basedir}/src/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.packetfilter" description="cleanup module">
+    <delete dir="${packetfilter.output.dir}"/>
+    <delete dir="${packetfilter.testoutput.dir}"/>
+  </target>
+</project>

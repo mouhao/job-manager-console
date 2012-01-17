@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="openfire_client">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/openfire_client/lib" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/jml-1.0b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/smsClient.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/cindy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/spring-2.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/junit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/httpcore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/openfire_client/lib" recursive="false" />
+  </library>
+</component>

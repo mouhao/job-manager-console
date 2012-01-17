@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_openfire_client" default="compile.module.openfire_client">
+  <dirname property="module.openfire_client.basedir" file="${ant.file.module_openfire_client}"/>
+  
+  <property name="module.jdk.home.openfire_client" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.openfire_client" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.openfire_client" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.openfire_client" value="${compiler.args}"/>
+  
+  <property name="openfire_client.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/openfire_client"/>
+  <property name="openfire_client.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/openfire_client"/>
+  
+  <path id="openfire_client.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="openfire_client.module.classpath">
+    <path refid="${module.jdk.classpath.openfire_client}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.openfire_client.classpath"/>
+  </path>
+  
+  <path id="openfire_client.runtime.module.classpath">
+    <pathelement location="${openfire_client.output.dir}"/>
+    <pathelement location="${openfire_client.testoutput.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.openfire_client.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.openfire_client">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.openfire_client">
+    <patternset refid="excluded.from.module.openfire_client"/>
+  </patternset>
+  
+  <path id="openfire_client.module.sourcepath">
+    <dirset dir="${module.openfire_client.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.openfire_client" depends="compile.module.openfire_client.production,compile.module.openfire_client.tests" description="Compile module openfire_client"/>
+  
+  <target name="compile.module.openfire_client.production" description="Compile module openfire_client; production classes">
+    <mkdir dir="${openfire_client.output.dir}"/>
+    <javac2 destdir="${openfire_client.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.openfire_client}/javac">
+      <compilerarg line="${compiler.args.openfire_client}"/>
+      <bootclasspath refid="openfire_client.module.bootclasspath"/>
+      <classpath refid="openfire_client.module.classpath"/>
+      <src refid="openfire_client.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.openfire_client"/>
+    </javac2>
+    
+    <copy todir="${openfire_client.output.dir}">
+      <fileset dir="${module.openfire_client.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.openfire_client.tests" depends="compile.module.openfire_client.production" description="compile module openfire_client; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.openfire_client" description="cleanup module">
+    <delete dir="${openfire_client.output.dir}"/>
+    <delete dir="${openfire_client.testoutput.dir}"/>
+  </target>
+</project>

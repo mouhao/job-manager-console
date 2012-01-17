@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!--
+Automatically created by Apache Jakarta Tomcat JspC.
+-->
+<web-app>
+
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.delete_002dmsn_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.delete_002dmsn_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.delete_002dsms_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.delete_002dsms_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dcreate_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.group_002dcreate_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002ddelete_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.group_002ddelete_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dedit_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.group_002dedit_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dsummary_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.group_002dsummary_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.msn_002dedit_002dform_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.msn_002dedit_002dform_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.msn_002dform_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.msn_002dform_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.pf_002dmain_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.pf_002dmain_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.sms_002dedit_002dform_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.sms_002dedit_002dform_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.sms_002dform_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.sms_002dform_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dcreate_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dcreate_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002ddelete_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002ddelete_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dedit_002dform_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dedit_002dform_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dlockout_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dlockout_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dmessage_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dmessage_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dpassword_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dpassword_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dproperties_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dproperties_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dsummary_jsp</servlet-name>
+        <servlet-class>org.jivesoftware.openfire.plugin.packetFilter.user_002dsummary_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.delete_002dmsn_jsp</servlet-name>
+        <url-pattern>/delete-msn.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.delete_002dsms_jsp</servlet-name>
+        <url-pattern>/delete-sms.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dcreate_jsp</servlet-name>
+        <url-pattern>/group-create.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002ddelete_jsp</servlet-name>
+        <url-pattern>/group-delete.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dedit_jsp</servlet-name>
+        <url-pattern>/group-edit.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.group_002dsummary_jsp</servlet-name>
+        <url-pattern>/group-summary.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.msn_002dedit_002dform_jsp</servlet-name>
+        <url-pattern>/msn-edit-form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.msn_002dform_jsp</servlet-name>
+        <url-pattern>/msn-form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.pf_002dmain_jsp</servlet-name>
+        <url-pattern>/pf-main.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.sms_002dedit_002dform_jsp</servlet-name>
+        <url-pattern>/sms-edit-form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.sms_002dform_jsp</servlet-name>
+        <url-pattern>/sms-form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dcreate_jsp</servlet-name>
+        <url-pattern>/user-create.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002ddelete_jsp</servlet-name>
+        <url-pattern>/user-delete.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dedit_002dform_jsp</servlet-name>
+        <url-pattern>/user-edit-form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dlockout_jsp</servlet-name>
+        <url-pattern>/user-lockout.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dmessage_jsp</servlet-name>
+        <url-pattern>/user-message.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dpassword_jsp</servlet-name>
+        <url-pattern>/user-password.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dproperties_jsp</servlet-name>
+        <url-pattern>/user-properties.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.jivesoftware.openfire.plugin.packetFilter.user_002dsummary_jsp</servlet-name>
+        <url-pattern>/user-summary.jsp</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+

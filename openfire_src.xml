@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="openfire_src" default="all">
+  
+  
+  <property file="openfire_src.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm.jar"/>
+    <pathelement location="${javac2.home}/asm-commons.jar"/>
+  </path>
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+  <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.sbas/**"/>
+    <exclude name="**/.IJI.*/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.5" value="${jdk.home.1.5}/bin"/>
+  <path id="jdk.classpath.1.5">
+    <fileset dir="${jdk.home.1.5}">
+      <include name="lib/deploy.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/jce.jar"/>
+      <include name="lib/plugin.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="../Classes/charsets.jar"/>
+      <include name="../Classes/classes.jar"/>
+      <include name="../Classes/dt.jar"/>
+      <include name="../Classes/jce.jar"/>
+      <include name="../Classes/jconsole.jar"/>
+      <include name="../Classes/jsse.jar"/>
+      <include name="../Classes/laf.jar"/>
+      <include name="../Classes/ui.jar"/>
+      <include name="lib/ext/apple_provider.jar"/>
+      <include name="lib/ext/dnsns.jar"/>
+      <include name="lib/ext/localedata.jar"/>
+      <include name="lib/ext/sunjce_provider.jar"/>
+      <include name="lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.5}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.5}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.5"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.dist.classpath">
+    <pathelement location="${basedir}/build/lib/dist/activation.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/bouncycastle.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/hsqldb.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/jdic.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/jtds.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/mail.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/mysql.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/postgres.jar"/>
+    <pathelement location="${basedir}/build/lib/dist/servlet.jar"/>
+  </path>
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/src/plugins/fastpath/lib/commons-fileupload-1.0.jar"/>
+    <pathelement location="${basedir}/src/plugins/fastpath/lib/lucene.jar"/>
+    <pathelement location="${basedir}/src/plugins/fastpath/lib/xstream.jar"/>
+  </path>
+  
+  <path id="library.lib3.classpath">
+    <pathelement location="${basedir}/src/test/throttletest/build/lib/smack.jar"/>
+    <pathelement location="${basedir}/src/test/throttletest/build/lib/smackx.jar"/>
+  </path>
+  
+  <path id="library.lib4.classpath">
+    <pathelement location="${basedir}/build/lib/ant-contrib.jar"/>
+    <pathelement location="${basedir}/build/lib/ant-jive-edition.jar"/>
+    <pathelement location="${basedir}/build/lib/ant-subdirtask.jar"/>
+    <pathelement location="${basedir}/build/lib/ant.jar"/>
+    <pathelement location="${basedir}/build/lib/cglib-nodep.jar"/>
+    <pathelement location="${basedir}/build/lib/commons-el.jar"/>
+    <pathelement location="${basedir}/build/lib/hamcrest-api.jar"/>
+    <pathelement location="${basedir}/build/lib/hamcrest-library.jar"/>
+    <pathelement location="${basedir}/build/lib/i4jruntime.jar"/>
+    <pathelement location="${basedir}/build/lib/jasper-compiler.jar"/>
+    <pathelement location="${basedir}/build/lib/jasper-runtime.jar"/>
+    <pathelement location="${basedir}/build/lib/jmock-junit4.jar"/>
+    <pathelement location="${basedir}/build/lib/jmock-legacy.jar"/>
+    <pathelement location="${basedir}/build/lib/jmock.jar"/>
+    <pathelement location="${basedir}/build/lib/junit.jar"/>
+    <pathelement location="${basedir}/build/lib/objenesis.jar"/>
+    <pathelement location="${basedir}/build/lib/pack200task.jar"/>
+    <pathelement location="${basedir}/build/lib/qdox.jar"/>
+    <pathelement location="${basedir}/build/lib/xmltask.jar"/>
+  </path>
+  
+  <path id="library.merge.classpath">
+    <pathelement location="${basedir}/build/lib/merge/commons-codec.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/commons-httpclient.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/commons-lang.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/commons-logging.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/dbutil.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/dom4j.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jaxen.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jdom.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jetty-sslengine.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jetty-util.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jetty.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jmdns.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jsp-api.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jstl.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jstun-0.6.1.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/jzlib.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/mina-core.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/mina-filter-compression.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/mina-filter-ssl.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/proxool.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/rome-fetcher.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/rome.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/shaj.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/sitemesh.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/slf4j-api-1.1.0.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/slf4j-simple-1.1.0.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/standard.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/stringprep.jar"/>
+    <pathelement location="${basedir}/build/lib/merge/xpp3.jar"/>
+  </path>
+  
+  <path id="library.msn.classpath">
+    <pathelement location="/Users/songjiao/Downloads/java_msn/jml-1.0b4.jar"/>
+    <pathelement location="${basedir}/src/plugins/packetFilter/lib/cindy.jar"/>
+    <pathelement location="${basedir}/src/plugins/packetFilter/lib/commons-logging.jar"/>
+    <pathelement location="${basedir}/src/plugins/packetFilter/lib/httpcore.jar"/>
+    <pathelement location="${basedir}/src/plugins/packetFilter/lib/jml-1.0b4.jar"/>
+    <pathelement location="${basedir}/src/plugins/packetFilter/lib/junit.jar"/>
+  </path>
+  
+  <path id="library.openfire_client.classpath">
+    <fileset dir="${basedir}/src/openfire_client/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.openfire_server.classpath">
+    <fileset dir="${basedir}/openfire_server/web/WEB-INF/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/src/openfire_client/module_openfire_client.xml"/>
+  
+  <import file="${basedir}/openfire_server/module_openfire_server.xml"/>
+  
+  <import file="${basedir}/src/module_openfire_src.xml"/>
+  
+  <import file="${basedir}/src/test/throttletest/module_throttletest.xml"/>
+  
+  <import file="${basedir}/src/tools/module_tools.xml"/>
+  
+  <import file="${basedir}/src/plugins/packetFilter/module_packetfilter.xml"/>
+  
+  <import file="${basedir}/src/test/module_test.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.openfire_client, clean.module.openfire_server, clean.module.openfire_src, clean.module.throttletest, clean.module.tools, clean.module.packetfilter, clean.module.test" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.openfire_client, compile.module.openfire_server, compile.module.openfire_src, compile.module.throttletest, compile.module.tools, compile.module.packetfilter, compile.module.test" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.openfire_server" value="${basedir}/out/artifacts/openfire_server"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.openfire_server.war" value="${artifacts.temp.dir}/openfire_server.war"/>
+  </target>
+  
+  <target name="artifact.openfire_server" depends="init.artifacts, compile.module.openfire_server" description="Build &apos;openfire_server&apos; artifact">
+    <property name="artifact.temp.output.openfire_server" value="${artifacts.temp.dir}/openfire_server"/>
+    <mkdir dir="${artifact.temp.output.openfire_server}"/>
+    <jar destfile="${temp.jar.path.openfire_server.war}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${openfire_server.output.dir}" prefix="WEB-INF/classes"/>
+      <zipfileset file="${basedir}/openfire_server/web/WEB-INF/lib/smack.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/openfire_server/web/WEB-INF/lib/smackx.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/openfire_server/web/WEB-INF/lib/smsClient.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/openfire_server/web/WEB-INF/lib/spring-2.5.6.jar" prefix="WEB-INF/lib"/>
+      <zipfileset dir="${basedir}/openfire_server/web"/>
+      <zipfileset file="${basedir}/openfire_server/web/WEB-INF/web.xml" prefix="WEB-INF"/>
+    </jar>
+    <copy file="${temp.jar.path.openfire_server.war}" tofile="${artifact.temp.output.openfire_server}/openfire_server.war"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.openfire_server" description="Build all artifacts">
+    <mkdir dir="${artifact.output.openfire_server}"/>
+    <copy todir="${artifact.output.openfire_server}">
+      <fileset dir="${artifact.temp.output.openfire_server}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

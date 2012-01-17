@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_throttletest" default="compile.module.throttletest">
+  <dirname property="module.throttletest.basedir" file="${ant.file.module_throttletest}"/>
+  
+  <property name="module.jdk.home.throttletest" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.throttletest" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.throttletest" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.throttletest" value="${compiler.args}"/>
+  
+  <property name="throttletest.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/Throttletest"/>
+  <property name="throttletest.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/Throttletest"/>
+  
+  <path id="throttletest.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="throttletest.module.classpath">
+    <path refid="${module.jdk.classpath.throttletest}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="throttletest.runtime.module.classpath">
+    <pathelement location="${throttletest.output.dir}"/>
+    <pathelement location="${throttletest.testoutput.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.throttletest">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.throttletest">
+    <patternset refid="excluded.from.module.throttletest"/>
+  </patternset>
+  
+  <path id="throttletest.module.sourcepath">
+    <dirset dir="${module.throttletest.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.throttletest" depends="compile.module.throttletest.production,compile.module.throttletest.tests" description="Compile module Throttletest"/>
+  
+  <target name="compile.module.throttletest.production" description="Compile module Throttletest; production classes">
+    <mkdir dir="${throttletest.output.dir}"/>
+    <javac2 destdir="${throttletest.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.throttletest}/javac">
+      <compilerarg line="${compiler.args.throttletest}"/>
+      <bootclasspath refid="throttletest.module.bootclasspath"/>
+      <classpath refid="throttletest.module.classpath"/>
+      <src refid="throttletest.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.throttletest"/>
+    </javac2>
+    
+    <copy todir="${throttletest.output.dir}">
+      <fileset dir="${module.throttletest.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.throttletest.tests" depends="compile.module.throttletest.production" description="compile module Throttletest; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.throttletest" description="cleanup module">
+    <delete dir="${throttletest.output.dir}"/>
+    <delete dir="${throttletest.testoutput.dir}"/>
+  </target>
+</project>

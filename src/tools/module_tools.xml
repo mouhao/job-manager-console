@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_tools" default="compile.module.tools">
+  <dirname property="module.tools.basedir" file="${ant.file.module_tools}"/>
+  
+  <property name="module.jdk.home.tools" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.tools" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.tools" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tools" value="${compiler.args}"/>
+  
+  <property name="tools.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/Tools"/>
+  <property name="tools.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/Tools"/>
+  
+  <path id="tools.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tools.module.classpath">
+    <path refid="${module.jdk.classpath.tools}"/>
+    <path refid="library.lib4.classpath"/>
+  </path>
+  
+  <path id="tools.runtime.module.classpath">
+    <pathelement location="${tools.output.dir}"/>
+    <pathelement location="${tools.testoutput.dir}"/>
+    <path refid="library.lib4.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tools">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tools">
+    <patternset refid="excluded.from.module.tools"/>
+  </patternset>
+  
+  <path id="tools.module.sourcepath">
+    <dirset dir="${module.tools.basedir}">
+      <include name="anttask"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.tools" depends="compile.module.tools.production,compile.module.tools.tests" description="Compile module Tools"/>
+  
+  <target name="compile.module.tools.production" description="Compile module Tools; production classes">
+    <mkdir dir="${tools.output.dir}"/>
+    <javac2 destdir="${tools.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.tools}/javac">
+      <compilerarg line="${compiler.args.tools}"/>
+      <bootclasspath refid="tools.module.bootclasspath"/>
+      <classpath refid="tools.module.classpath"/>
+      <src refid="tools.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.tools"/>
+    </javac2>
+    
+    <copy todir="${tools.output.dir}">
+      <fileset dir="${module.tools.basedir}/anttask">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.tools.tests" depends="compile.module.tools.production" description="compile module Tools; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tools" description="cleanup module">
+    <delete dir="${tools.output.dir}"/>
+    <delete dir="${tools.testoutput.dir}"/>
+  </target>
+</project>

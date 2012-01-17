@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="dist">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/jdic.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/hsqldb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/bouncycastle.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/mysql.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/postgres.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/jtds.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/dist/activation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
