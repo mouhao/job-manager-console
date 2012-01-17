@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/picocontainer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/jcommon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/jfreechart.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/itext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/jrobin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/lucene.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/monitoring/lib/dwr.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

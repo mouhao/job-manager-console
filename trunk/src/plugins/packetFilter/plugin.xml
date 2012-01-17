@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <!-- Main plugin class -->
+    <class>org.jivesoftware.openfire.plugin.PacketFilterPlugin</class>
+
+
+    <name>Packet Filter</name>
+    <description>一个专门负责过滤特定ID的消息包的插件，然后把过滤的消息转发给msn和手机;用于监控</description>
+    <author>songjiao</author>
+    <version>1.0</version>
+    <date>20/6/2010</date>
+    <minServerVersion>3.6.0</minServerVersion>
+    <databaseKey>packetfilter</databaseKey>
+    <databaseVersion>2</databaseVersion>
+
+    <!-- Admin console entries
+
+    <adminconsole>
+        <tab id="tab-server">
+            <sidebar id="sidebar-server-settings">
+                <item id="packetFilter" name="${pf.summary.title}"
+                    url="pf-main.jsp"
+                    description="${pf.summary.title}" />
+            </sidebar>
+         </tab>
+    </adminconsole>
+    -->
+
+    <adminconsole>
+        <tab id="tab-server">
+            <sidebar id="packetFilter" name="packetFilter"
+                     description="包过滤器">
+                <item id="groups" name="消息接收组"
+                      url="pf-main.jsp"
+                      description="显示消息接收组"/>
+                <item id="addgroup" name="新建组"
+                      url="group-create.jsp"
+                      description="新建消息接收组"/>
+                <item id="users" name="用户"
+                      url="user-summary.jsp"
+                      description="显示用户"/>
+
+                <item id="adduser" name="新建用户"
+                      url="user-create.jsp"
+                      description="新建用户"/>
+                <item id="addMsn" name="添加MSN"
+                      url="msn-form.jsp" description="添加MSN"/>
+                <item id="addSMS" name="添加手机号" url="sms-form.jsp" description="添加手机号"/>
+
+
+            </sidebar>
+
+        </tab>
+    </adminconsole>
+</plugin>

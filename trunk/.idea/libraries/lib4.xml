@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="lib4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/lib/ant-subdirtask.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/ant-jive-edition.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/junit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/hamcrest-library.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/jmock-legacy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/xmltask.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/i4jruntime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/ant-contrib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/commons-el.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/objenesis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/jmock.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/jasper-runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/pack200task.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/jmock-junit4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/hamcrest-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/cglib-nodep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/jasper-compiler.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/qdox.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/lib/ant.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

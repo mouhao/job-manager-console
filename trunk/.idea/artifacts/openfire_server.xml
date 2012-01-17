@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="openfire_server">
+    <output-path>$PROJECT_DIR$/out/artifacts/openfire_server</output-path>
+    <root id="archive" name="openfire_server.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="openfire_server" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="openfire_server" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="openfire_server/web/Web" />
+    </root>
+  </artifact>
+</component>

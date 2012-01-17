@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="msn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../java_msn/jml-1.0b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/httpcore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/junit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/jml-1.0b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/plugins/packetFilter/lib/cindy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../java_msn/jml-src-1.0b4/test" />
+      <root url="file://$PROJECT_DIR$/../../../java_msn/jml-src-1.0b4/example" />
+      <root url="file://$PROJECT_DIR$/../../../java_msn/jml-src-1.0b4/src" />
+    </SOURCES>
+  </library>
+</component>

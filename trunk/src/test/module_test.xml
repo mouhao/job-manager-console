@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_test" default="compile.module.test">
+  <dirname property="module.test.basedir" file="${ant.file.module_test}"/>
+  
+  <property name="module.jdk.home.test" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.test" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.test" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.test" value="${compiler.args}"/>
+  
+  <property name="test.output.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/production/Test"/>
+  <property name="test.testoutput.dir" value="/Users/songjiao/Downloads/soft/openfire_spark/openfire_src/out/test/Test"/>
+  
+  <path id="test.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="test.module.classpath">
+    <path refid="${module.jdk.classpath.test}"/>
+    <path refid="library.lib4.classpath"/>
+    <path refid="library.merge.classpath"/>
+    <pathelement location="${openfire_src.output.dir}"/>
+    <pathelement location="${openfire_src.testoutput.dir}"/>
+  </path>
+  
+  <path id="test.runtime.module.classpath">
+    <pathelement location="${test.output.dir}"/>
+    <pathelement location="${test.testoutput.dir}"/>
+    <path refid="library.lib4.classpath"/>
+    <path refid="library.merge.classpath"/>
+    <path refid="openfire_src.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.test">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.test">
+    <patternset refid="excluded.from.module.test"/>
+  </patternset>
+  
+  <path id="test.module.test.sourcepath">
+    <dirset dir="${module.test.basedir}">
+      <include name="java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.test" depends="compile.module.test.production,compile.module.test.tests" description="Compile module Test"/>
+  
+  <target name="compile.module.test.production" depends="compile.module.openfire_src" description="Compile module Test; production classes"/>
+  
+  <target name="compile.module.test.tests" depends="compile.module.test.production" description="compile module Test; test classes" unless="skip.tests">
+    <mkdir dir="${test.testoutput.dir}"/>
+    <javac2 destdir="${test.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.test}/javac">
+      <compilerarg line="${compiler.args.test}"/>
+      <classpath refid="test.module.classpath"/>
+      <classpath>
+        <path refid="test.module.classpath"/>
+        <pathelement location="${test.output.dir}"/>
+      </classpath>
+      <src refid="test.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.test"/>
+    </javac2>
+    
+    <copy todir="${test.testoutput.dir}">
+      <fileset dir="${module.test.basedir}/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.test" description="cleanup module">
+    <delete dir="${test.output.dir}"/>
+    <delete dir="${test.testoutput.dir}"/>
+  </target>
+</project>
